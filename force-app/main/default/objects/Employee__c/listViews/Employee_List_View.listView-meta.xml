@@ -7,6 +7,6 @@
     <columns>Date_of_Birth__c</columns>
     <columns>Primary_Email__c</columns>
     <columns>Primary_Phone__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>Employee List View</label>
 </ListView>
