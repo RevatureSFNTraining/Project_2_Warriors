@@ -1,0 +1,12 @@
+<apex:page docType="html-5.0" controller="TransactionController">
+    <apex:stylesheet value="{!$Resource.style}" />
+    <apex:form id="newPrice">
+        Issue Date: <apex:input type="date" value="{!issueDate}">
+        <apex:actionSupport event="onchange" action="{!totalPrice}" rerender="newPrice"/>
+        </apex:input><br/>
+        Expected Return Date: <apex:input type="date" value="{!expectedReturnDate}">
+        <apex:actionSupport event="onchange" action="{!totalPrice}" rerender="newPrice"/>
+        </apex:input><br/>
+        Total Price: <apex:outputLabel value="{!tp}"/>
+    </apex:form>
+</apex:page>

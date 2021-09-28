@@ -1,0 +1,111 @@
+<!-- 
+Name: SellerInformation
+Author: Julia Weakley
+DateCreated: 9/13/2021
+DateModified: 9/17/2021
+Description: 
+-->
+
+<apex:page controller="CarWizardController" showHeader="false">
+    <apex:form >
+        <style>
+            .buttons
+            {
+            text-align: center;
+            flex: wrap; 
+            
+            }
+            .bPageBlock .section .pbSubheader
+            {
+            background-color: #a20000;
+            border-color: #a20000;
+            text-align: center;
+            
+            }
+            .bPageBlock 
+            {
+            border: 3px solid;
+            border-color: #a20000;
+            }
+            
+            
+        </style>
+        <apex:pageBlock title=" Information">
+            
+            <apex:outputPanel styleClass="section" layout="block">
+                <!--Purchase Transaction Information -->
+                <apex:pageBlockSection columns="1"   title="Company Information" >
+                    
+                    <apex:inputField value="{!tran.Name}" required="true"/>
+                    
+                    
+                    <!--  Do you choose User???-->
+                    <!--             
+<apex:selectList multiselect="false" size="1" value="{!tran.Authorized_User__c}"  >
+<apex:selectOptions value="{!authUsers}" />
+</apex:selectList> 
+-->                
+                    <!-- Select company  -->
+                    <apex:selectList multiselect="false" value="{!tran.Company__c}"  size="1"  >
+                        <apex:selectOptions value="{!companyOptions}" rendered="true"> 
+                        </apex:selectOptions>
+                    </apex:selectList> 
+                    
+                    
+                    <!-- Select Depot Selling to  -->  
+                    <apex:selectList multiselect="false" value="{!tran.Depot__c}" size="1">
+                        <apex:selectOptions value="{!depotOptions}" rendered="true">
+                        </apex:selectOptions>
+                    </apex:selectList>
+                    
+                    <!--Select Manufacturer -->
+                    <apex:selectList multiselect="false" value="{!tran.Manufacturer__c}" size="1">
+                        <apex:selectOptions value="{!ManufacturerOptions}" rendered="true">
+                        </apex:selectOptions>
+                    </apex:selectList>
+                    
+                    <!-- Input for price of Vehicle and transaction -->
+                    <apex:inputField label="Price of Vehicle" value="{!tran.Price__c}"  />
+                    
+                    <!-- input any Additional notes -->
+                    <apex:inputField label="Additional Notes" value="{!tran.Notes__c}"/>
+                </apex:pageBlockSection>
+                <!-- End of PageBlockSection for Company Information -->    
+            </apex:outputPanel>
+            <br/>
+            <apex:outputPanel styleClass="section" layout="block">
+                <!-- Vehicle Object information -->
+                <apex:pageBlockSection title="Vehicle Information" columns="1">
+                    
+                    <apex:inputField value="{!vec.Name}"  required="true" />
+                    
+                    <!--Should this be created behind scenes ????? -->
+                    <apex:inputField value="{!vec.Vehicle_Identification_Number__c}"/>
+                    <apex:inputField value="{!vec.Vehicle_Make__c}"  />
+                    <apex:inputField value="{!vec.Vehicle_Model__c}" />
+                    <apex:inputField value="{!vec.Vehicle_Year__c}" />
+                    <apex:selectList multiselect="false" value="{!vec.Manufacturer__c}" size="1">
+                        <apex:selectOptions value="{!ManufacturerOptions}" rendered="true">
+                        </apex:selectOptions>
+                    </apex:selectList>
+                    <apex:inputField value="{!vec.Odometer_Mileage__c}"/>
+                    <apex:inputField value="{!vec.Condition__c}"/>
+                    <apex:inputField value="{!vec.Base_Rental_Rate__c}"/>
+                    <apex:inputField value="{!vec.Description__c}"/>
+                    <!-- <apex:inputTextarea title="Additional Notes About the car" value=""></apex:inputTextarea> -->
+                    
+                </apex:pageBlockSection>
+                <!-- End of PageBlockSection for Vehicle Information -->    
+            </apex:outputPanel>
+            <br/>  
+            <div class="buttons">
+                <apex:commandButton immediate="true" value="Back" action="{!start}"/>
+                
+                <apex:commandButton styleClass="submitButton" value=" Submit and Add Vehicle" action="{!addAnotherVehicle}"/>
+                
+                <apex:commandButton value="Submit" action="{!saveVehicle}"/>
+            </div>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,36 @@
+<apex:page controller="CarListController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.style}" />
+    <style>
+        #ct{
+            text-align:center;
+            font-size:xx-large;
+        }
+    </style> 
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!changeLoc}" value="Change Location"/>
+                <apex:commandButton action="{!carList}" value="Rental Listings"/>
+                <apex:commandButton action="{!faq}" value="FAQ/Issues"/>
+                <apex:commandButton action="{!sellCar}" value="Sell My Car"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <div id="ct">
+            <h> Cars For Rent</h>
+        </div>
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!vehicleList}" var="cl">
+				<apex:column value="{!cl.Name}"/>
+				<apex:column value="{!cl.Vehicle_Type__c}"/>
+				<apex:column value="{!cl.Vehicle_Make__c}"/>
+				<apex:column value="{!cl.Vehicle_Model__c}"/>
+				<apex:column value="{!cl.Vehicle_Year__c}"/>
+				<apex:column value="{!cl.Status__c}"/>
+				<apex:column value="{!cl.Description__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <div align="center" draggable="false">
+        <apex:commandButton value="Rent Now" action="{!redirect}"/>
+        </div>
+    </apex:form> 
+</apex:page>

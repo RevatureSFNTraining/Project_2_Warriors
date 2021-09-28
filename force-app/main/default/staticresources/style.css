@@ -1,0 +1,13 @@
+body {
+    background-attachment: fixed;
+    background-image: url(/resource/background);
+    font-size: 16px;
+}
+
+.logo {
+    display: block;
+    margin: 16px auto;
+
+    width: 300px;
+    height: 175px;
+}

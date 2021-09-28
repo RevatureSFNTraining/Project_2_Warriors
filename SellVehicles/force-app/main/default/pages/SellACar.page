@@ -1,0 +1,62 @@
+<!-- 
+Name: SellACar
+Author: Julia Weakley
+DateCreated: 9/13/2021
+DateModified: 9/17/2021
+Description: 
+-->
+
+<apex:page controller="CarWizardController" showHeader="false">
+    <apex:form >
+        <style>
+            p, .buttons
+            {
+            text-align: center; 
+            flex: wrap;
+            }
+            h1 
+            {
+            font-color: #a20000;
+            border-color: #a20000;
+            text-align: center; 
+            
+            
+            }
+            
+            .bPageBlock
+            {
+            text-align: center; 
+            background-color: red;
+            border-color: #a20000;
+            }
+            .bPageBlock .pbuttons
+            {
+            text-align: start; 
+            
+            }
+        </style>
+        
+        <apex:outputPanel styleClass="section" layout="block">
+            <apex:pageBlock >
+                
+                
+                <apex:pageBlockButtons location="top"  >
+                    <div style="float: left">
+                        <apex:commandButton action="{!changeLoc}" value = "Change Location"/>
+                        <apex:commandButton action="{!carList}" value = "Rental Listings"/>
+                        <apex:commandButton action="{!faq}" value = "FAQ/Issues"/>
+                        <apex:commandButton action="{!sellCar}" value = "Sell My Car"/>
+                    </div>
+                </apex:pageBlockButtons>
+                
+                <h1>Sell Your Vehicle to Us</h1>
+                <p>Hello, thank you for selling your Vehicle. Click Start to begin. </p>
+                <br/>
+                
+                <div class="buttons">
+                    <apex:commandButton value="Start" action="{!sellerInfo}"/>
+                </div>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

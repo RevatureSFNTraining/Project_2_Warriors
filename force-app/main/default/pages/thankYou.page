@@ -1,0 +1,24 @@
+<apex:page controller="returnHome" showHeader="false">
+    <apex:stylesheet value="{!$Resource.style}" />
+    <style>
+    body, td {
+    /* margin-top: 50%; */
+    text-align: center;
+    align-items: center;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+    </style>
+    <apex:pageBlock >
+        <div id="divElement">
+            <h> Thank You For Renting with us!</h>
+        
+        <apex:form >
+            <apex:commandButton action="{!returnToHome}" value="Return to Home Page"/>
+        </apex:form>
+        </div>
+    </apex:pageBlock>
+    
+</apex:page>

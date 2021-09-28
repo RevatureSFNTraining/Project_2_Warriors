@@ -1,0 +1,180 @@
+# This file is used for Git repositories to specify intentionally untracked files that Git should ignore. 
+# If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
+# For useful gitignore templates see: https://github.com/github/gitignore
+
+# Salesforce cache
+.sfdx/
+.localdevserver/
+
+# LWC VSCode autocomplete
+**/lwc/jsconfig.json
+
+# LWC Jest coverage reports
+coverage/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Eslint cache
+.eslintcache
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Local environment variables
+.env
+
+# Salesforce Org generated files
+force-app/main/default/classes/ChangePasswordController.cls
+force-app/main/default/classes/ChangePasswordController.cls-meta.xml
+force-app/main/default/classes/ChangePasswordControllerTest.cls
+force-app/main/default/classes/ChangePasswordControllerTest.cls-meta.xml
+force-app/main/default/classes/CommunitiesLandingController.cls
+force-app/main/default/classes/CommunitiesLandingController.cls-meta.xml
+force-app/main/default/classes/CommunitiesLandingControllerTest.cls
+force-app/main/default/classes/CommunitiesLandingControllerTest.cls-meta.xml
+force-app/main/default/classes/CommunitiesLoginController.cls
+force-app/main/default/classes/CommunitiesLoginController.cls-meta.xml
+force-app/main/default/classes/CommunitiesLoginControllerTest.cls
+force-app/main/default/classes/CommunitiesLoginControllerTest.cls-meta.xml
+force-app/main/default/classes/CommunitiesSelfRegConfirmController.cls
+force-app/main/default/classes/CommunitiesSelfRegConfirmController.cls-meta.xml
+force-app/main/default/classes/CommunitiesSelfRegConfirmControllerTest.cls
+force-app/main/default/classes/CommunitiesSelfRegConfirmControllerTest.cls-meta.xml
+force-app/main/default/classes/CommunitiesSelfRegController.cls
+force-app/main/default/classes/CommunitiesSelfRegController.cls-meta.xml
+force-app/main/default/classes/CommunitiesSelfRegControllerTest.cls
+force-app/main/default/classes/CommunitiesSelfRegControllerTest.cls-meta.xml
+force-app/main/default/classes/ForgotPasswordController.cls
+force-app/main/default/classes/ForgotPasswordController.cls-meta.xml
+force-app/main/default/classes/ForgotPasswordControllerTest.cls
+force-app/main/default/classes/ForgotPasswordControllerTest.cls-meta.xml
+force-app/main/default/classes/LightningForgotPasswordController.cls
+force-app/main/default/classes/LightningForgotPasswordController.cls-meta.xml
+force-app/main/default/classes/LightningForgotPasswordControllerTest.cls
+force-app/main/default/classes/LightningForgotPasswordControllerTest.cls-meta.xml
+force-app/main/default/classes/LightningLoginFormController.cls
+force-app/main/default/classes/LightningLoginFormController.cls-meta.xml
+force-app/main/default/classes/LightningLoginFormControllerTest.cls
+force-app/main/default/classes/LightningLoginFormControllerTest.cls-meta.xml
+force-app/main/default/classes/LightningSelfRegisterController.cls
+force-app/main/default/classes/LightningSelfRegisterController.cls-meta.xml
+force-app/main/default/classes/LightningSelfRegisterControllerTest.cls
+force-app/main/default/classes/LightningSelfRegisterControllerTest.cls-meta.xml
+force-app/main/default/classes/MyProfilePageController.cls
+force-app/main/default/classes/MyProfilePageController.cls-meta.xml
+force-app/main/default/classes/MyProfilePageControllerTest.cls
+force-app/main/default/classes/MyProfilePageControllerTest.cls-meta.xml
+force-app/main/default/classes/SiteLoginController.cls
+force-app/main/default/classes/SiteLoginController.cls-meta.xml
+force-app/main/default/classes/SiteLoginControllerTest.cls
+force-app/main/default/classes/SiteLoginControllerTest.cls-meta.xml
+force-app/main/default/classes/SiteRegisterController.cls
+force-app/main/default/classes/SiteRegisterController.cls-meta.xml
+force-app/main/default/classes/SiteRegisterControllerTest.cls
+force-app/main/default/classes/SiteRegisterControllerTest.cls-meta.xml
+force-app/main/default/components/SiteFooter.component
+force-app/main/default/components/SiteFooter.component-meta.xml
+force-app/main/default/components/SiteHeader.component
+force-app/main/default/components/SiteHeader.component-meta.xml
+force-app/main/default/components/SiteLogin.component
+force-app/main/default/components/SiteLogin.component-meta.xml
+force-app/main/default/components/SitePoweredBy.component
+force-app/main/default/components/SitePoweredBy.component-meta.xml
+force-app/main/default/pages/AnswersHome.page
+force-app/main/default/pages/AnswersHome.page-meta.xml
+force-app/main/default/pages/BandwidthExceeded.page
+force-app/main/default/pages/BandwidthExceeded.page-meta.xml
+force-app/main/default/pages/ChangePassword.page
+force-app/main/default/pages/ChangePassword.page-meta.xml
+force-app/main/default/pages/CommunitiesLanding.page
+force-app/main/default/pages/CommunitiesLanding.page-meta.xml
+force-app/main/default/pages/CommunitiesLogin.page
+force-app/main/default/pages/CommunitiesLogin.page-meta.xml
+force-app/main/default/pages/CommunitiesSelfReg.page
+force-app/main/default/pages/CommunitiesSelfReg.page-meta.xml
+force-app/main/default/pages/CommunitiesSelfRegConfirm.page
+force-app/main/default/pages/CommunitiesSelfRegConfirm.page-meta.xml
+force-app/main/default/pages/CommunitiesTemplate.page
+force-app/main/default/pages/CommunitiesTemplate.page-meta.xml
+force-app/main/default/pages/Exception.page
+force-app/main/default/pages/Exception.page-meta.xml
+force-app/main/default/pages/FileNotFound.page
+force-app/main/default/pages/FileNotFound.page-meta.xml
+force-app/main/default/pages/ForgotPassword.page
+force-app/main/default/pages/ForgotPassword.page-meta.xml
+force-app/main/default/pages/ForgotPasswordConfirm.page
+force-app/main/default/pages/ForgotPasswordConfirm.page-meta.xml
+force-app/main/default/pages/IdeasHome.page
+force-app/main/default/pages/IdeasHome.page-meta.xml
+force-app/main/default/pages/InMaintenance.page
+force-app/main/default/pages/InMaintenance.page-meta.xml
+force-app/main/default/pages/MyProfilePage.page
+force-app/main/default/pages/MyProfilePage.page-meta.xml
+force-app/main/default/pages/SiteLogin.page
+force-app/main/default/pages/SiteLogin.page-meta.xml
+force-app/main/default/pages/SiteRegister.page
+force-app/main/default/pages/SiteRegister.page-meta.xml
+force-app/main/default/pages/SiteRegisterConfirm.page
+force-app/main/default/pages/SiteRegisterConfirm.page-meta.xml
+force-app/main/default/pages/SiteTemplate.page
+force-app/main/default/pages/SiteTemplate.page-meta.xml
+force-app/main/default/pages/StdExceptionTemplate.page
+force-app/main/default/pages/StdExceptionTemplate.page-meta.xml
+force-app/main/default/pages/Unauthorized.page
+force-app/main/default/pages/Unauthorized.page-meta.xml
+force-app/main/default/pages/UnderConstruction.page
+force-app/main/default/pages/UnderConstruction.page-meta.xml
+force-app/main/default/profiles/Chatter External User.profile-meta.xml
+force-app/main/default/profiles/Chatter Free User.profile-meta.xml
+force-app/main/default/profiles/Chatter Moderator User.profile-meta.xml
+force-app/main/default/profiles/ContractManager.profile-meta.xml
+force-app/main/default/profiles/Cross Org Data Proxy User.profile-meta.xml
+force-app/main/default/profiles/Custom%3A Marketing Profile.profile-meta.xml
+force-app/main/default/profiles/Custom%3A Sales Profile.profile-meta.xml
+force-app/main/default/profiles/Custom%3A Support Profile.profile-meta.xml
+force-app/main/default/profiles/Customer Community Login User.profile-meta.xml
+force-app/main/default/profiles/Customer Community Plus Login User.profile-meta.xml
+force-app/main/default/profiles/Customer Community Plus User.profile-meta.xml
+force-app/main/default/profiles/Customer Community User.profile-meta.xml
+force-app/main/default/profiles/Customer Portal Manager Custom.profile-meta.xml
+force-app/main/default/profiles/Customer Portal Manager Standard.profile-meta.xml
+force-app/main/default/profiles/External Apps Login User.profile-meta.xml
+force-app/main/default/profiles/External Identity User.profile-meta.xml
+force-app/main/default/profiles/Force%2Ecom - App Subscription User.profile-meta.xml
+force-app/main/default/profiles/Force%2Ecom - Free User.profile-meta.xml
+force-app/main/default/profiles/Gold Partner User.profile-meta.xml
+force-app/main/default/profiles/Guest License User.profile-meta.xml
+force-app/main/default/profiles/High Volume Customer Portal User.profile-meta.xml
+force-app/main/default/profiles/HighVolumePortal.profile-meta.xml
+force-app/main/default/profiles/Identity User.profile-meta.xml
+force-app/main/default/profiles/MarketingProfile.profile-meta.xml
+force-app/main/default/profiles/Minimum Access - Salesforce.profile-meta.xml
+force-app/main/default/profiles/Partner App Subscription User.profile-meta.xml
+force-app/main/default/profiles/Partner Community Login User.profile-meta.xml
+force-app/main/default/profiles/Partner Community User.profile-meta.xml
+force-app/main/default/profiles/PlatformPortal.profile-meta.xml
+force-app/main/default/profiles/ReadOnly.profile-meta.xml
+force-app/main/default/profiles/Silver Partner User.profile-meta.xml
+force-app/main/default/profiles/SolutionManager.profile-meta.xml
+force-app/main/default/profiles/Standard.profile-meta.xml
+force-app/main/default/profiles/StandardAul.profile-meta.xml
+force-app/main/default/profiles/Work%2Ecom Only User.profile-meta.xml
+force-app/main/default/profiles/Authenticated Website.profile-meta.xml
+force-app/main/default/profiles/Analytics Cloud Integration User.profile-meta.xml
+force-app/main/default/profiles/Analytics Cloud Security User.profile-meta.xml
+force-app/main/default/profiles/Admin.profile-meta.xml
+force-app/main/default/staticresources/SiteSamples/

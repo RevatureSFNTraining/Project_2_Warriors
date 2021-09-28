@@ -1,0 +1,184 @@
+<apex:page standardController="Case" extensions="CaseController" showHeader="false" title="FAQ">
+    <apex:pageBlock>
+        <apex:form>
+            <apex:pageBlock>
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton action="{!changeLoc}" value="Change Location" />
+                    <apex:commandButton action="{!carList}" value="Rental Listings" />
+                    <apex:commandButton action="{!faq}" value="FAQ/Issues" />
+                    <apex:commandButton action="{!sellCar}" value="Sell My Car" />
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+        <link REL="SHORTCUT ICON" HREF="{!URLFOR($Resource.favicon)}" />
+        <style type="text/css">
+            .bPageBlock .detailList .dataCol {
+                width: 100%;
+            }
+
+            .caseTab .tertiaryPalette,
+            .individualPalette .caseBlock .tertiaryPalette,
+            .layoutEdit .individualPalette .caseBlock .tertiaryPalette {
+                background-color: #a20000;
+                border-color: #580000;
+            }
+
+            .caseTab .secondaryPalette,
+            .individualPalette .caseBlock .secondaryPalette {
+                border-color: #a20000;
+            }
+
+            ul li,
+            ol li {
+                margin-left: 0;
+                padding-left: 0;
+            }
+        </style>
+        <div style="font-size:16px">
+            <apex:pageBlockSection title="Requirements for Renting">
+                <b><span style="font-size:12pt;">Age Requirements</span></b><br />
+                What are age requirements for renting?<br />
+                <font color="grey">The minimum age requirement for renting is 23.</font><br />
+                <b><span style="font-size:12pt;">Credential Requirements</span></b><br />
+                Do you require a deposit before renting?<br />
+                <font color="grey">No, payment will be initiated once you make your reservation for your vehicle.</font>
+            </apex:pageBlockSection>
+        </div>
+        <div style="font-size:16px;">
+            <apex:pageBlockSection title="Reservations">
+                <b><span style="font-size:12pt;">Changing Your Reservation</span></b><br />
+                How can I change my reservation?<br />
+                <font color="grey">You can change your reservation by signing in. Once you have signed in,
+                    you can go to your reservations under "Reservations" and modify your reservation.</font><br />
+                <b><span style="font-size:12pt;">Viewing Your Reservation</span></b><br />
+                How can I view my reservation?<br />
+                <font color="grey">You can view your reservation by signing in. Once you have signed in,
+                    you can go to your reservations under "Reservations" and view your reservations.</font>
+            </apex:pageBlockSection>
+        </div>
+        <div style="font-size:16px">
+            <apex:pageBlockSection title="Locations" columns="1">
+                <b><span style="font-size:12pt;">Locations</span></b><br />
+                Where can I find the locations?<br />
+                <table>
+                    <tr>
+                        <font color="grey">The locations can be viewed here:
+                            <apex:outputLink value="https://carrentalportal1-developer-edition.na163.force.com/"
+                                id="theLink">Depot Locations</apex:outputLink>
+                        </font>
+                    </tr>
+                </table>
+
+            </apex:pageBlockSection>
+        </div>
+        <div style="font-size:16px">
+            <apex:pageBlockSection title="Rental Services">
+                <b><span style="font-size:12pt;">Insurance</span></b><br />
+                What insurance policy do you offer on the vehicles?
+                <br />
+                <font color="grey">We require you to provide your own auto insurance on the vehicle
+                    and provide the ID number at the reservation page (e.g. Geico Insurance, ID/Policy Number with
+                    Geico).</font>
+            </apex:pageBlockSection>
+        </div>
+        <div style="font-size:16px">
+            <apex:pageBlockSection title="Cars">
+                <b><span style="font-size:12pt;">Types of Vehicles</span></b><br />
+                What types of vehicles do you offer?
+                <br />
+                <font color="grey">Standard Car, Truck, Van, and Limousine.</font><br />
+                <b><span style="font-size:12pt;">Rates</span></b><br />
+                What are your rates for your vehicles?<br />
+                <font color="grey">The rates depend on the type of vehicle you are reserving.</font>
+            </apex:pageBlockSection>
+        </div>
+        <div style="font-size:16px">
+            <apex:pageBlockSection title="Rental Policies">
+                <b><span style="font-size:12pt;">Smoking</span></b><br />
+                Is smoking allowed on the vehicles?<br />
+                <font color="grey">Unfortunately no, we do not allow smoking is prohibited inside the vehicles.</font>
+            </apex:pageBlockSection>
+        </div>
+        <div style="font-size:16px">
+            <apex:pageBlockSection title="Payment">
+                <b><span style="font-size:12pt;">Types of Payment</span></b><br />
+                What are the forms of payment you accept?<br />
+                <font color="grey">We accept only payments in form of card payment. Due to COVID, we are unable to
+                    accept cash
+                    payments at the moment.</font>
+            </apex:pageBlockSection>
+        </div>
+        <apex:pageBlock>
+            <div style="font-size:16px">
+                <apex:messages />
+                <apex:pageBlockSection title="Create a Case" id="test">
+                    <apex:form id="CaseForm">
+                        <table>
+                            <tr>
+                                <b>
+                                    <td>Type:</td>
+                                </b>
+                                <td>
+                                    <apex:inputField style="width:100px" value="{! Case.Type }" required="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Status:</td>
+                                <td>
+                                    <apex:inputField value="{! Case.Status }" required="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Origin:</td>
+                                <td>
+                                    <apex:inputField value="{! Case.Origin }" required="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Reason:</td>
+                                <td>
+                                    <apex:inputField value="{! Case.Reason }" required="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td>
+                                    <apex:inputField style="width:300px" value="{! Case.SuppliedEmail }"
+                                        required="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phone:</td>
+                                <td>
+                                    <apex:inputField style="width:300px" value="{! Case.SuppliedPhone }"
+                                        required="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Subject:</td>
+                                <td>
+                                    <apex:inputField style="width:300px" value="{! Case.Subject }" required="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Description:</td>
+                                <td>
+                                    <apex:inputField style="width:550px; height:100px" value="{! Case.Description }"
+                                        required="true" />
+                                </td>
+                            </tr>
+                        </table>
+                        <apex:commandButton action="{! save }" value="Save" />
+                    </apex:form>
+
+                </apex:pageBlockSection>
+
+            </div>
+
+        </apex:pageBlock>
+
+    </apex:pageBlock>
+
+
+
+</apex:page>

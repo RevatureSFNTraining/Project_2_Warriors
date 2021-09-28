@@ -1,0 +1,131 @@
+<apex:page doctype="html-5.0" controller="DepotController" showHeader="false">
+    <apex:stylesheet value="{!$Resource.style}" />
+    <style type="text/css">
+        .depotDisplayName {
+            font-size: 14pt;
+            padding-bottom: 16px;
+        }
+        .depotEntry {
+            border-color: black;
+            border-style: solid;
+            border-width: 2px;
+            display: inline-grid;
+
+            margin: 8px;
+        }
+        .depotEntry td {
+            padding: 4px 8px 4px 8px;
+        }
+        .depotLink {
+            text-align: center;
+        }
+        .selectDepotLink {
+            font-size: 16pt;
+            font-weight: bold;
+        }
+
+        #apexBody {
+            margin: 0 25% 0 25%;
+        }
+        #companyBlock {
+            text-align: center;
+        }
+        #depotEntries {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin: 16px auto 16px auto;
+        }
+        #pageFooter {
+            padding: 0 auto 0 auto;
+            text-align: center;
+        }
+    </style>
+    <div id="header">
+        <apex:image styleClass="logo" value="{!$Resource.logo}" alt="Car Rental Portal" />
+    </div>
+    <div id="apexBody">
+        <apex:form >
+            <apex:pageBlock title="Welcome">
+                <apex:outputText value="Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle." />
+            </apex:pageBlock>
+            <apex:pageBlock title="Company">
+                <div id="companyBlock">
+                    <apex:outputLabel value="Select your company: " />
+                    <apex:selectList value="{!accountId}" size="1">
+                        <apex:selectOptions value="{!accountItems}" />
+                        <apex:actionSupport event="onchange" action="{!filterDepots}" rerender="depotData" />
+                    </apex:selectList>
+                </div>
+            </apex:pageBlock>
+            <apex:pageBlock id="depotData" title="Depots">
+                <apex:pageBlockSection title="Filters" columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Depot Name:" for="nameFilterInput" />
+                        <apex:input id="nameFilterInput" type="search" value="{!nameFilter}">
+                            <apex:actionSupport event="onchange" action="{!filterDepots}" rerender="depotData" />
+                        </apex:input>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Address:" for="locationFilterInput" />
+                        <apex:input id="locationFilterInput" type="search" value="{!locationFilter}">
+                            <apex:actionSupport event="onchange" action="{!filterDepots}" rerender="depotData" />
+                        </apex:input>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel style="text-decoration: underline;" value="Reset Filters">
+                            <apex:actionSupport event="onclick" action="{!resetFilters}" rerender="depotData" />
+                        </apex:outputLabel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <div id="depotEntries">
+                    <apex:repeat value="{!depots}" var="depot" first="{!firstIndex}" rows="{!numEntriesPerPage}">
+                        <div class="depotEntry">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th class="depotDisplayName" colspan="2"><apex:outputLabel value="{!depot.Name}" /></th>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Owned by:</b></td>
+                                        <td><apex:outputLabel value="{!depot.Owner__r.Name}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Depot Manager:</b></td>
+                                        <td><apex:outputLabel value="{!depot.Depot_Manager__c}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Address:</b></td>
+                                        <td><apex:outputLabel value="{!depot.Address__c}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phone:</b></td>
+                                        <td><apex:outputLabel value="{!depot.Primary_Phone__c}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="depotLink">
+                                            <apex:outputLink value="http://google.com/maps/search/{!depot.Address__c}" target="_blank">Find in Google Maps</apex:outputLink>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="depotLink">
+                                            <apex:commandLink styleClass="selectDepotLink" action="{!selectDepot}" value="Make this my depot!">
+                                                <apex:param name="depot_id" value="{!depot.Id}" />
+                                            </apex:commandLink>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </apex:repeat>
+                </div>
+                <div id="pageFooter">
+                    <apex:outputLabel value="Page Number: " />
+                    <apex:selectList value="{!pageNumber}" size="1">
+                        <apex:selectOptions value="{!pageNumbers}" />
+                        <apex:actionSupport event="onchange" rerender="depotData" />
+                    </apex:selectList>
+                </div>
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page >
+    <apex:stylesheet value="{!$Resource.style}" />
+    <apex:pageBlock title="Hello World">
+        <apex:pageBlockSection >
+            Hello world!
+        </apex:pageBlockSection>
+        <apex:pageBlockSection >
+            <apex:outputLabel value="Label here" />
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

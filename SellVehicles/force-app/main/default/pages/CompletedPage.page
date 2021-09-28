@@ -1,0 +1,54 @@
+<!-- 
+Name: CompletedPage
+Author: Julia Weakley
+DateCreated: 9/13/2021
+DateModified: 9/17/2021
+Description: 
+-->
+
+<apex:page controller="CarWizardController" showHeader="false">
+    <apex:form >
+        <style>
+            h1
+            {
+            font-color: #a20000;
+            border-color: #a20000;
+            text-align: center; 
+            
+            
+            }
+            .bPageBlock 
+            {
+            text-align: center; 
+            background-color: red;
+            border-color: #a20000;
+            }
+            .nav
+            {
+            
+            
+            }
+            
+        </style>
+        <apex:pageBlock >
+            
+            <apex:pageBlockButtons location="top" styleClass="nav" >
+                <div style="float: left">
+                    <apex:commandButton action="{!changeLoc}" value = "Change Location"/>
+                    <apex:commandButton action="{!carList}" value = "Rental Listings"/>
+                    <apex:commandButton action="{!faq}" value = "FAQ/Issues"/>
+                    <apex:commandButton action="{!sellCar}" value = "Sell My Car"/>
+                </div>
+            </apex:pageBlockButtons>
+            
+            
+            <h1>Thank you</h1>
+            
+            <p> You did it!! Have a nice day.</p>
+        </apex:pageBlock>
+        
+        
+        
+        
+    </apex:form>
+</apex:page>

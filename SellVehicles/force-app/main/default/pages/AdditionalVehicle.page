@@ -1,0 +1,65 @@
+<!-- 
+Name: AdditionalVehicle
+Author: Julia Weakley
+DateCreated: 9/13/2021
+DateModified: 9/17/2021
+Description: 
+-->
+
+<apex:page controller="CarWizardController" showHeader="false">
+     <apex:form >
+          <style>
+            .buttons
+            {
+            	text-align: center;
+            	
+            }
+               .bPageBlock .section .pbSubheader
+            {
+              background-color: #a20000;
+                border-color: #a20000;
+            	 text-align: center; 
+            }
+              .bPageBlock 
+            {
+            	border: 3px solid;
+            	border-color: #a20000;
+            }
+        </style>
+       <apex:PageBlock title="Information">
+            
+            <!-- Vehicle Object information -->
+            <apex:outputPanel styleClass="section" layout="block">
+            <apex:pageBlockSection title="Vehicle Information" columns="1">
+                
+                <apex:inputField value="{!vec.Name}"  />
+                
+                <!--Should this be created behind scenes ????? -->
+                <apex:inputField value="{!vec.Vehicle_Identification_Number__c}"/>
+                <apex:inputField value="{!vec.Vehicle_Make__c}"  />
+                <apex:inputField value="{!vec.Vehicle_Model__c}" />
+                <apex:inputField value="{!vec.Vehicle_Year__c}" />
+                <apex:selectList multiselect="false" value="{!vec.Manufacturer__c}" size="1">
+                  <apex:selectOptions value="{!ManufacturerOptions}" rendered="true">
+                  </apex:selectOptions>
+                </apex:selectList>
+                <apex:inputField value="{!vec.Odometer_Mileage__c}"/>
+                <apex:inputField value="{!vec.Condition__c}"/>
+                 <apex:inputField value="{!vec.Base_Rental_Rate__c}"/>
+                <apex:inputField value="{!vec.Description__c}"/>
+                <!-- <apex:inputTextarea title="Additional Notes About the car" value=""></apex:inputTextarea> -->
+                
+            </apex:pageBlockSection>
+            <!-- End of PageBlockSection for Vehicle Information -->    
+           </apex:outputPanel>
+            <br/>    
+			<div class="buttons">
+
+            <apex:commandButton value="Exit" action="{!start}"/>
+            <apex:commandButton value="Submit and add another Vehicle" action="{!addAnotherVehicle}"/>
+            <apex:commandButton value="Submit" action="{!saveVehicle}"/>
+              </div>   
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
