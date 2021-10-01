@@ -1,0 +1,37 @@
+<aura:component>
+
+    <aura:html tag="style">
+
+        html { background-attachment: fixed; background-image: url(/resource/background); font-size: 16px; } .logo { display: block; margin: 16px auto; width: 300px; height: 175px; } .slds-card{ width: 50%; margin: auto; box-shadow: 0px -4px; } hr{ margin: 0px;
+        padding: 0px; } .page{ margin: 0; padding: 0; width: 100%; height: 70vh; } .Header { display: block; margin: 16px auto; background-image: url(/resource/logo); background-size: 300px 175px; width: 300px; height: 175px; }
+    </aura:html>
+    <div class="Header" />
+
+    <div class="page">
+        <lightning:card class="slds-card" title="Welcome">
+            <hr/>
+            <p class="slds-p-horizontal_small slds-card__header slds-grid">
+                <h2 class="slds-card__header-title">
+                    Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
+                </h2>
+            </p>
+        </lightning:card>
+        <lightning:card class="slds-card" title="Second Welcome">
+            <hr/>
+            <p class="slds-p-horizontal_small slds-card__header slds-grid">
+                <h2 class="slds-card__header-title">
+                    Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
+                </h2>
+            </p>
+        </lightning:card>
+
+        <lightning:card class="slds-card" title="Second Welcome">
+            <hr/>
+            <p class="slds-p-horizontal_small slds-card__header slds-grid">
+                <h2 class="slds-card__header-title">
+                    Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
+                </h2>
+            </p>
+        </lightning:card>
+    </div>
+</aura:component>
