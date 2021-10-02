@@ -1,24 +1,49 @@
 ({
-    helperMethod: function(component, event) {
+    getAccounts: function(component) {
+        var action = component.get("c.getAccounts");
 
-        var newAcc = component.get("v.newAccount"); //sets newAcc varible to attribute from form in view
-        var action = component.get("c.saveAccount"); //sets action varible to method from apex controller
-
-        action.setParams({
-            "acc": newAcc //sets parameters to apex controller
-        });
-
-        action.setCallback(this, function(response) { //sets a callback to be sent 
-            var state = response.getState(); //once the c.saveAccount is run
-            if (state === "SUCCESS") { //if it goes well an alert will happen
-
-                var name = response.getReturnValue().Name; //getReturnValue() gets JSON from response
-                alert("hello " + name); //win free credit card popup
+        //Set up the callback
+        var self = this;
+        action.setCallback(this, function(actionResult) {
+            var state = actionResult.getState();
+            if (component.isValid() && state === "SUCCESS") {
+                component.set("v.contacts", actionResult.getReturnValue());
             }
         });
-
-
-        $A.enqueueAction(action) //jquery fires settup function
+        $A.enqueueAction(action);
     },
 
+    updatePage: function(component, event, helper) {
+        var value = event.getSource().get("v.value");
+        var current = component.get("v.contacts[" + value + "].Name");
+        var currentID = component.get("v.contacts[" + value + "].Id");
+
+        //alert("Hey you pushed a button, maybe it will do something someday! : " + current + " and ID: " + currentID);
+
+        event.getSource().set("v.disabled", true);
+
+        var ConList = component.get("c.getRelatedList");
+        //alert("Hey");
+        ConList.setParams({
+            recordId: currentID
+        });
+
+        ConList.setCallback(this, function(actionResult) {
+            var state = actionResult.getState();
+            if (component.isValid() && state === "SUCCESS") {
+                var object1 = actionResult.getReturnValue();
+                component.set("v.ContactList", actionResult.getReturnValue());
+                //alert("Valid Company "+component.get("v.ContactList[0].Name"));
+                //do logic
+            } else {
+                alert("Invalid Company");
+            }
+
+        });
+        $A.enqueueAction(ConList);
+
+    },
+    unlockCompany: function(component, event, helper) {
+        component.set("v.cdisabled", false);
+    }
 })

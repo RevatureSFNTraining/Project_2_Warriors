@@ -1,9 +1,12 @@
 ({
-    createAccount: function(component, event) {
-
-        helper.helperMethod(component, event);
+    doInit: function(component, event, helper) {
+        helper.getAccounts(component);
     },
-    close: function(component, event) {
-        alert("You can not destroy what you have alredy made...");
-    }
+    updateThing: function(component, event, helper) {
+        helper.updatePage(component, event, helper);
+    },
+    unlockCompany: function(component, event, helper) {
+        helper.unlockCompany(component, event, helper);
+    },
+
 })

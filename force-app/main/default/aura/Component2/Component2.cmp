@@ -1,10 +1,15 @@
-<aura:component>
+<aura:component controller="AccountListController">
 
     <aura:html tag="style">
 
         html { background-attachment: fixed; background-image: url(/resource/background); font-size: 16px; } .logo { display: block; margin: 16px auto; width: 300px; height: 175px; } .slds-card{ width: 50%; margin: auto; box-shadow: 0px -4px; } hr{ margin: 0px;
         padding: 0px; } .page{ margin: 0; padding: 0; width: 100%; height: 70vh; } .Header { display: block; margin: 16px auto; background-image: url(/resource/logo); background-size: 300px 175px; width: 300px; height: 175px; }
     </aura:html>
+    <aura:attribute name="ContactList" type="Contact[]" />
+    <aura:attribute name="recordId" type="Contact" />
+    <aura:attribute name="contacts" type="List" />
+    <aura:attribute name="cdisabled" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <div class="Header" />
 
     <div class="page">
@@ -16,21 +21,52 @@
                 </h2>
             </p>
         </lightning:card>
-        <lightning:card class="slds-card" title="Second Welcome">
+        <lightning:card class="slds-card" title="Company">
             <hr/>
             <p class="slds-p-horizontal_small slds-card__header slds-grid">
-                <h2 class="slds-card__header-title">
-                    Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
-                </h2>
+                <lightning:select name="select1" label="Select your company:  " disabled="{!v.cdisabled}" required="true" onchange="{!c.updateThing}">
+
+                    <option text="Choose your Company:" selected="true" />
+
+                    <aura:iteration items="{!v.contacts}" var="contact" indexVar="index">
+
+                        <option value="{!index}">{!index + 1}. {!contact.Name} </option>
+
+                    </aura:iteration>
+
+                </lightning:select>
+                <lightning:buttonIcon iconName="utility:unlock" alternativeText="Unlock" title="Unlock" onclick="{!c.unlockCompany}" />
+
             </p>
         </lightning:card>
 
-        <lightning:card class="slds-card" title="Second Welcome">
+        <lightning:card class="slds-card" title="Depots">
             <hr/>
             <p class="slds-p-horizontal_small slds-card__header slds-grid">
-                <h2 class="slds-card__header-title">
-                    Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
-                </h2>
+                <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer">
+
+                    <thead>
+                        <tr class="slds-text-heading--small">
+                            <th scope="col"><span class="slds-truncate">Name </span></th>
+                            <th scope="col"><span class="slds-truncate">Phone</span></th>
+                            <th scope="col"><span class="slds-truncate">Email</span></th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        <aura:iteration items="{!v.ContactList}" var="con" indexVar="index2">
+                            <tr class="slds-text-heading--small">
+                                <th scope="col"><span class="slds-truncate">{!con.Name}</span></th>
+                                <th scope="col"><span class="slds-truncate">{!con.Phone} </span></th>
+                                <th scope="col"><span class="slds-truncate">{!con.Email} </span></th>
+                            </tr>
+                        </aura:iteration>
+
+
+                    </tbody>
+                </table>
             </p>
         </lightning:card>
     </div>
