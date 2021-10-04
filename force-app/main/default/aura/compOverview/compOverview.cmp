@@ -1,0 +1,34 @@
+<aura:component>
+    <aura:html tag="style">
+        html { background-attachment: fixed; background-image: url(https://curious-wolf-df3vuo-dev-ed.lightning.force.com/resource/background); font-size: 16px; } .slot{ padding-top: 16px; } .test{ background-color: white; border-radius: 10px; box-shadow: 0px
+        -4px; } hr{ padding: 0px; margin: 0px; }
+    </aura:html>
+    <!--display nav-->
+    <div class="slot">
+        <c:CompNav/>
+    </div>
+    <!--create case-->
+
+
+    <div class="slot">
+        <lightning:tabset selectedTabId="one" class="test">
+            <lightning:tab label="Landing" id="one">
+                <h1>Welcome!</h1>
+                <hr/> Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
+            </lightning:tab>
+            <lightning:tab label="Rent Car" id="two">
+                Put your Component here!!!
+            </lightning:tab>
+            <lightning:tab label="Another Page I don't Remember" id="three">
+                Put your Component here!!!
+            </lightning:tab>
+            <lightning:tab label="FAQ" id="four">
+                Put your Component here!!!
+            </lightning:tab>
+            <lightning:tab label="Return Car" id="five">
+                <c:returnCar/>
+            </lightning:tab>
+        </lightning:tabset>
+
+    </div>
+</aura:component>

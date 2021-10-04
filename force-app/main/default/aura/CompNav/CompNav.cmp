@@ -1,0 +1,41 @@
+<aura:component controller="NavListController">
+    <aura:html tag="style">
+        .card { display: inline-block; margin: auto; width: 50%; height: 20px; } body { width: 50%; margin: auto; padding-bottom: 20px; } .nav{ margin: auto; box-shadow: 0px -4px; padding-bottom: 10px; } .Header { display: block; margin: 16px auto; background-image:
+        url(https://pngimage.net/wp-content/uploads/2018/05/car-rental-logo-png-6.png); background-size: 300px 175px; width: 300px; height: 175px; }
+    </aura:html>
+
+
+    <!--locked dropdown for account-->
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:attribute name="contacts" type="Contact[]" />
+    <aura:attribute name="accLocked" type="Boolean" default="false" />
+    <aura:attribute name="conLocked" type="Boolean" default="false" />
+    <aura:attribute name="loadingAcct" type="String" default="" />
+    <aura:attribute name="loadingCont" type="String" default="" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="navInfo" type="c:navInfo" />
+    <!--only need to activate event on contact update because contacts only have 1 account-->
+    <div class="Header" />
+    <lightning:spinner variant="brand" size="large" aura:id="Id_spinner" class="slds-hide" />
+    <h1>{!v.loadingAcct} {!v.loadingCont}</h1>
+    <div class="nav slds-card">
+
+
+        <div class="card">
+            <lightning:select name="selectAcc" label="Select your company:  " disabled="{!v.accLocked}" required="true" onchange="{!c.updateCont}">
+                <option text="Choose your Company:" selected="true" />
+                <aura:iteration items="{!v.accounts}" var="acc" indexVar="index">
+                    <option value="{!index}">{!index + 1}. {!acc.Name} </option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+        <div class="card">
+            <lightning:select name="selectCon" label="Select your contact:  " disabled="{!v.conLocked}" required="true" onchange="">
+                <option text="Choose your Depot:" selected="true" />
+                <aura:iteration items="{!v.contacts}" var="con" indexVar="i">
+                    <option value="{!i}">{!i + 1}. {!con.Email} </option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+    </div>
+</aura:component>
