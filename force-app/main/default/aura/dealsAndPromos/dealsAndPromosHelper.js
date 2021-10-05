@@ -22,4 +22,9 @@
         });
         $A.enqueueAction(action);
     },
+
+    addDiscount : function(component) {
+        
+    }
+
 })
