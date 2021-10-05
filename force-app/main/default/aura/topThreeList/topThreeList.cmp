@@ -1,4 +1,4 @@
- <aura:component controller="TopThreeListController">
+<aura:component controller="TopThreeListController">
     
     <!-- Attributes-->
     <aura:attribute name="cars" type="Vehicle__c[]"/>
@@ -22,10 +22,10 @@
                             <c:popularCar car="{!car}"/>
                         </aura:iteration>
                     </form>
+                    <c:location/>
                 </fieldset>
             </div>
         </lightning:layoutItem>
     </lightning:layout>
     
 </aura:component>
-
