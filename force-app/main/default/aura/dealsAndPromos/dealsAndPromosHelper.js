@@ -24,7 +24,31 @@
     },
 
     addDiscount : function(component) {
-        
+        var disc = component.get("v.discountChosen");
+        var action = component.get("c.findDiscount");
+        action.setParams({code: disc.Discount_Code__c});
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                var getDiscValue = response.getReturnValue();
+                console.log(getDiscValue);
+            }
+            else if (state === "INCOMPLETE") {
+                console.error("INCOMPLETE");
+            }
+            else if (state === "ERROR") {
+                var errors = response.getError();
+                if (errors) {
+                    if (errors[0] && errors[0].message) {
+                        console.error("Error message: " + 
+                                 errors[0].message);
+                    }
+                } else {
+                    console.error("Unknown error");
+                }
+            }
+        });
+        $A.enqueueAction(action);
     }
 
 })
