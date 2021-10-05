@@ -4,7 +4,9 @@
         <fullName>Standard</fullName>
         <active>true</active>
         <ruleEntry>
+
             <assignedTo>emailofnelson@resourceful-wolf-uaoima.com</assignedTo>
+
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Lead.Country</field>
@@ -13,7 +15,11 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
+
+           
+
             <assignedTo>emailofnelson@resourceful-wolf-uaoima.com</assignedTo>
+
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Lead.Country</field>
