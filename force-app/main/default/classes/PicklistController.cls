@@ -13,4 +13,3 @@ public class PicklistController {
         return pickListValuesList;
     }
 }
-

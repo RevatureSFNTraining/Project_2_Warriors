@@ -20,6 +20,8 @@
                             name="discountCode"
                             value="{!v.discountChosen.Discount_Code__c}"/>
             </form> 
+            <lightning:button label="Add This Discount" class= "slds-m-top_medium" 
+            variant="success" onclick="{!c.addDiscount}"/>
         </div>
     </div>   
 </aura:component>	

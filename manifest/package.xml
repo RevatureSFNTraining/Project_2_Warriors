@@ -53,6 +53,7 @@
         <name>ApexTestSuite</name>
     </types>
     <types>
+        <members>Discount__c</members>
         <members>*</members>
         <name>CustomObject</name>
     </types>
