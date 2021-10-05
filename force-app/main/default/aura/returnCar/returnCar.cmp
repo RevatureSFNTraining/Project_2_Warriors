@@ -12,7 +12,16 @@
     <aura:attribute name="Editable" type="Boolean" default="!{v.newContact.level__c}=='Secondary'" />
 
 
+
+    <!--EVENT HANDLING VARIABLES-->
+    <aura:attribute name="account" type="Account" />
+    <aura:attribute name="depot" type="Depot__c" />
+    <aura:handler event="c:navInfo" action="{!c.handleApplicationEvent}" />
+    <!--EVENT HANDLING VARIBALES-->
+
+
     <aura:attribute name="searchKeyword" type="String" />
+
     <div class="slds-card information">
 
 
@@ -62,7 +71,7 @@
 
         <aura:if isTrue="{!v.Car.Status__c=='Checked Out'}">
 
-            <lightning:button onclick="{!c.updateContact}" label="Check In" iconName="utility:check" />
+            <lightning:button onclick="{!c.updateCar}" label="Check In" iconName="utility:check" />
             <aura:set attribute="else">
                 <lightning:button onclick="" label="Checked In" iconName="utility:check" disabled="true" />
             </aura:set>

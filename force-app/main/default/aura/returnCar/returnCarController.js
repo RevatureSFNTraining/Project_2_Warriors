@@ -1,5 +1,5 @@
 ({
-    updateContact: function(component, event) {
+    updateCar: function(component, event) {
 
         var newCar = component.get("v.Car"); //sets newAcc varible to attribute from form in view
 
@@ -14,19 +14,17 @@
             var state = response.getState(); //once the c.saveAccount is run
             if (state === "SUCCESS") { //if it goes well an alert will happen
 
-                alert("SUCCESS"); //win free credit card popup
+                // alert("SUCCESS"); //win free credit card popup
                 component.set("v.Car", action.getReturnValue());
             } else {
-                alert("Failure");
+                alert("Failure, unable to update car");
             }
         });
 
 
         $A.enqueueAction(action) //jquery fires settup function
     },
-    close: function(component, event) {
-        alert("You can not destroy what you have alredy made...");
-    },
+
     Search: function(component, event) {
 
         var searchKey = component.get("v.searchKeyword");
@@ -39,10 +37,10 @@
             var state = response.getState(); //once the c.saveAccount is run
             if (state === "SUCCESS") { //if it goes well an alert will happen
 
-                alert("SUCCESS"); //win free credit card popup
+                //alert("SUCCESS"); //win free credit card popup
                 component.set("v.Car", action.getReturnValue());
             } else {
-                alert("Failure");
+                alert("VIN not found..");
             }
 
 
@@ -51,6 +49,14 @@
 
         $A.enqueueAction(action);
     },
+
+    handleApplicationEvent: function(cmp, event) {
+        var Dep = event.getParam("depot");
+        var Acc = event.getParam("account");
+        cmp.set("v.account", Acc);
+        cmp.set("v.depot", Dep);
+    },
+
 
 
 })
