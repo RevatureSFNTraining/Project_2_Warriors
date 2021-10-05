@@ -6,9 +6,9 @@ public without sharing class NavListController {
    }
     
     @AuraEnabled
-    public static list<Contact> getRelatedList(Id recordId)
+    public static list<Depot__c> getRelatedList(Id recordId)
     {
-        List<Contact> Conlist = [Select id, name,firstname,lastname, email, phone from Contact where AccountId=:recordId ];
-        return Conlist;
+        List<Depot__c> depList = [Select id, name, address__c from Depot__c where Owner__c=:recordId ];
+        return depList;
     }
 }

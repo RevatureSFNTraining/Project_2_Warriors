@@ -5,7 +5,7 @@
     updateCont: function(component, event, helper) {
         helper.updateCont(component, event);
     },
-    fireNavInfoEvent: function(component, event, helper) {
-        helper.fireNavInfoEvent(component);
+    navInfoEvent: function(component, event, helper) {
+        helper.navInfoEvent(component, event);
     }
 })

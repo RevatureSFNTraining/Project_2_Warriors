@@ -18,37 +18,61 @@
     updateCont: function(component, event, helper) {
         var value = event.getSource().get("v.value");
         var currentID = component.get("v.accounts[" + value + "].Id");
-        var ConList = component.get("c.getRelatedList");
+        var DepList = component.get("c.getRelatedList");
         component.find("Id_spinner").set("v.class", 'slds-show');
 
-        ConList.setParams({
+        DepList.setParams({
             recordId: currentID
         });
         //Set up the callback
-        ConList.setCallback(this, function(actionResult) {
+        DepList.setCallback(this, function(actionResult) {
             var state = actionResult.getState();
             if (component.isValid() && state === "SUCCESS") {
                 component.find("Id_spinner").set("v.class", 'slds-hide');
                 var object1 = actionResult.getReturnValue();
                 //alert("Successful set: " + object1[0].email);
-                component.set("v.contacts", actionResult.getReturnValue());
+                component.set("v.depots", actionResult.getReturnValue());
                 //component.set("v.conLocked", false);
                 //component.set("v.accLocked", true);
                 //alert("Successful set: " + actionResult.getReturnValue()[0].Email);
             } else {
-                alert("Failed..")
+                alert("No depots found.");
             }
         });
-        $A.enqueueAction(ConList);
+        $A.enqueueAction(DepList);
     },
 
-    fireNavInfoEvent: function(component, event, helper) {
+    navInfoEvent: function(component, event) {
         //do logic
-        var cmpEvent = cmp.getEvent("navInfo");
-        componentEvent.setParams({
-            "account": component.find("selectAcc").get("v.value"),
-            "contact": component.find("selectCon").get("v.value")
+
+        //alert("arrived at event");
+        var appEvent = $A.get("e.c:navInfo")
+            // alert("event grabbed");
+        var selectAcc = component.find("selectAcc").get("v.value");
+        // alert("account value setup");
+        var selectDepot = component.find("selectDepot").get("v.value");
+
+
+
+
+
+
+
+        var testvar = component.get("v.depots");
+        var testvar2 = testvar[0].Name;
+        //alert("IS this EMPTY:  " + testvar2);
+        var Depot = component.get("v.depots[" + selectDepot + "]");
+        var Account = component.get("v.accounts[" + selectAcc + "]");
+
+        //alert("Account: " + selectAcc + " || Depot: " + selectDepot);
+        //alert("Account: " + Account.Name + " || Depot: " + Depot.Name);
+        appEvent.setParams({
+            "account": Account,
+            "depot": Depot
         });
-        componentEvent.fire();
+        //alert("values set");
+        appEvent.fire();
+
+
     },
 })
