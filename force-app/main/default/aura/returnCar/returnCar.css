@@ -1,2 +1,29 @@
-.THIS {
+.THIS .card {
+    display: inline-block;
+    margin: auto;
+    width: 50%;
+    height: 20px;
+}
+
+.THIS html {
+    margin-top: 20px;
+    padding-top: 16px;
+}
+
+.THIS body {
+    width: 50%;
+    margin-top: 20px;
+    padding-top: 16px;
+}
+
+.THIS .nav {
+    margin-top: 20px;
+    padding-top: 16px;
+    margin-right: 5px;
+    margin: auto;
+    box-shadow: 0px -4px;
+}
+
+.THIS .information {
+    padding-left: 10px;
 }
