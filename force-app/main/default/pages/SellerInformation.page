@@ -52,7 +52,6 @@ Description:
                         </apex:selectOptions>
                     </apex:selectList> 
                     
-                    
                     <!-- Select Depot Selling to  -->  
                     <apex:selectList multiselect="false" value="{!tran.Depot__c}" size="1">
                         <apex:selectOptions value="{!depotOptions}" rendered="true">
@@ -60,7 +59,7 @@ Description:
                     </apex:selectList>
                     
                     <!--Select Manufacturer -->
-                    <apex:selectList multiselect="false" value="{!tran.Manufacturer__c}" size="1">
+                    <apex:selectList multiselect="false" value="{!vec.Manufacturer__c}" size="1">
                         <apex:selectOptions value="{!ManufacturerOptions}" rendered="true">
                         </apex:selectOptions>
                     </apex:selectList>

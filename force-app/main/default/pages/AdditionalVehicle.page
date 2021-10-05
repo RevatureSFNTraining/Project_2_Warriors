@@ -61,6 +61,6 @@ Description:
             <apex:commandButton value="Submit" action="{!saveVehicle}"/>
               </div>   
             
-        </apex:pageBlock>
+         </apex:PageBlock>
     </apex:form>
 </apex:page>
