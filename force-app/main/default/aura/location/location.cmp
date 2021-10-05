@@ -8,7 +8,7 @@
         How are you doing in 
     </P>
     <p style="text-align:center">
-        {!v.city}, {!v.state}😊
+        {!v.city}, {!v.state} 😊
     </p>
    
     
