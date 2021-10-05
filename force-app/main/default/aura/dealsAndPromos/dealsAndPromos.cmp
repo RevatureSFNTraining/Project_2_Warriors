@@ -1,9 +1,10 @@
 <aura:component controller="dealsAndPromosController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <!--need to nest this component in the component that determines price of rental contract-->
     <aura:attribute name="discountChosen" type="Discount__c" default="{'Name': '', 'Discount_Code__c': '', 'Discount_Percent__c': 0}" />
     <aura:attribute name="discountOptions" type="List"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <div class="slds-text-heading_large">
-        <h3 class="slds-align_absolute-center">
+    <div>
+        <h3 class="slds-text-heading_large slds-align_absolute-center">
             Deals and Promotions
         </h3>
         <div>
@@ -22,6 +23,8 @@
             </form> 
             <lightning:button label="Add This Discount" class= "slds-m-top_medium" 
             variant="success" onclick="{!c.addDiscount}"/>
+            <!--this button will return the Discount__c record that matches the discount code
+                Then the Discount_Percent__c field of that record can be passed to the rental price calculator-->
         </div>
     </div>   
 </aura:component>	
