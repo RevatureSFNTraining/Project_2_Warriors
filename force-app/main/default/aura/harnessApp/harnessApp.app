@@ -1,3 +1,3 @@
 <aura:application extends = "force:slds">
-    <c:CarList/>
+    <c:RentCar/>
 </aura:application>	

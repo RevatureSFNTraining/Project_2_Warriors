@@ -1,0 +1,49 @@
+<aura:component>
+    <aura:attribute name="newRental" type="Rental_Contract__c"/>
+    <aura:attribute name="contactInfo" type="Contact"/>
+    <aura:attribute name="accountInfo" type="Account"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     
+    <div class="slds-section slds-is-open" aura:id="rentalInfo">
+        <div class= "slds-section__content" id="rentalSection">
+            <form>
+                <lightning:input label="First Name:"
+                    name="firstName"
+                    required="true"
+                    value="{!v.contactInfo.FirstName}"
+                    messageWhenValueMissing="You need to write a First Name"/>
+                    <lightning:input label="Last Name:"
+                    name="lastName"
+                    required="true"
+                    value="{!v.contactInfo.LastName}"
+                    messageWhenValueMissing="You need to write a Last Name"/>
+                    <lightning:input label="Birthday:"
+                    name="birthday"
+                    required="true"
+                    value="{!v.contactInfo.Birthdate}"
+                    messageWhenValueMissing="You need to write a Birthday"/>
+                    <lightning:input label="Email:"
+                    name="email"
+                    required="true"
+                    value="{!v.contactInfo.Email}"
+                    messageWhenValueMissing="You need to write an Email"/>
+                    <lightning:input label="Issue Date:"
+                    name="issueDate"
+                    required="true"
+                    value="{!v.newRental.Issue_Date__c}"
+                    messageWhenValueMissing="You need to put in an Issue Date"/>
+                    <lightning:input label="Expected Return Date:"
+                    name="expectedReturnDate"
+                    required="true"
+                    value="{!v.newRental.Expected_Return_Date__c}"
+                    messageWhenValueMissing="You need to put in an Expected Return Date"/>
+            </form>
+        <lightning:button label="Submit" class= "slds-m-top_medium" 
+        variant="success" onclick="{!c.clickCreateCar}"/>
+        <lightning:button label="Submit and Add Vehicle" class="slds-m-top_medium"
+        variant="success" onclick="{!c.clickAdditionalCar}"/>
+        </div>
+    </div>  
+
+</aura:component>	
