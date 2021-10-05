@@ -1,0 +1,15 @@
+<aura:component controller="LocationController">
+    <aura:attribute name="city" type="String" default="Getting city information"/>
+    <aura:attribute name="state" type="String" default="state information..."/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <P style="text-align:center">
+        How are you doing in 
+    </P>
+    <p style="text-align:center">
+        {!v.city}, {!v.state}😊
+    </p>
+   
+    
+</aura:component>
