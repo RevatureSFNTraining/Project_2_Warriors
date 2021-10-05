@@ -4,7 +4,10 @@
         <fullName>Standard</fullName>
         <active>true</active>
         <ruleEntry>
-            <assignedTo>cdirkswager@curious-wolf-df3vuo.com</assignedTo>
+
+
+            <assignedTo>emailofnelson@resourceful-wolf-uaoima.com</assignedTo>
+
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -23,7 +26,10 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>cdirkswager@curious-wolf-df3vuo.com</assignedTo>
+
+
+            <assignedTo>emailofnelson@resourceful-wolf-uaoima.com</assignedTo>
+
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -42,7 +48,9 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>cdirkswager@curious-wolf-df3vuo.com</assignedTo>
+
+            <assignedTo>emailofnelson@resourceful-wolf-uaoima.com</assignedTo>
+
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -61,7 +69,9 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>cdirkswager@curious-wolf-df3vuo.com</assignedTo>
+
+            <assignedTo>emailofnelson@resourceful-wolf-uaoima.com</assignedTo>
+
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.BillingCountry</field>
@@ -80,7 +90,9 @@
             </criteriaItems>
         </ruleEntry>
         <ruleEntry>
-            <assignedTo>cdirkswager@curious-wolf-df3vuo.com</assignedTo>
+
+            <assignedTo>emailofnelson@resourceful-wolf-uaoima.com</assignedTo>
+
             <assignedToType>User</assignedToType>
             <criteriaItems>
                 <field>Account.Type</field>
