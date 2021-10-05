@@ -1,0 +1,20 @@
+<aura:component>
+    <!-- Attributes-->
+    <aura:attribute name="car" type="Vehicle__c" default="{'sobjectType': 'Vehicle__c', 'Name': 'Car Name', 'Vehicle_Make__c': 'Car Brand' }"/>
+    <!-- / Attributes-->
+    
+    <lightning:card>
+        <div class="carName" style="text-align:center">   
+            {!v.car.Name}
+        </div>
+        <aura:set attribute="title">
+            <lightning:icon iconName="custom:custom31" 
+                            title="Car" 
+                            size="large"></lightning:icon>
+        </aura:set>
+        <aura:set attribute="footer">
+            <lightning:badge label="{!v.car.Vehicle_Make__c}"/>
+        </aura:set>
+    </lightning:card>
+    
+</aura:component>
