@@ -1,4 +1,4 @@
-<aura:component controller="TopThreeListController">
+<aura:component controller="TopThreeListController" implements="forceCommunity:availableForAllPageTypes">
     
     <!-- Attributes-->
     <aura:attribute name="cars" type="Vehicle__c[]"/>
