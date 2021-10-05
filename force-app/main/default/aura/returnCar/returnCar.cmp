@@ -1,8 +1,7 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" controller="ReturningCarController">
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" controller="ReturningCarController">
     <!-- refrences APEX controller -->
     <aura:html tag="style">
-        .card { display: inline-block; margin: auto; width: 50%; height: 20px; } html{ margin-top: 20px; padding-top: 16px; } body { width: 50%; margin-top: 20px; padding-top: 16px; } .nav{ margin-top: 20px; padding-top: 16px; margin-right: 5px; margin: auto;
-        box-shadow: 0px -4px; } .information{ padding-left: 10px; }
+
 
     </aura:html>
 

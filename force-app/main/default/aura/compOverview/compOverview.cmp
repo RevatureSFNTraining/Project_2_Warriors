@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component implements="forceCommunity:availableForAllPageTypes">
     <aura:html tag="style">
         html { background-attachment: fixed; background-image: url(https://curious-wolf-df3vuo-dev-ed.lightning.force.com/resource/background); font-size: 16px; } .slot{ padding-top: 16px; } .test{ background-color: white; border-radius: 10px; box-shadow: 0px
         -4px; } hr{ padding: 0px; margin: 0px; }

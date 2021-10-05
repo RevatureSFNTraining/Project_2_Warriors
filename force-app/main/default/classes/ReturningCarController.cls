@@ -22,8 +22,8 @@ public without sharing class ReturningCarController{
     public static Vehicle__c saveCar(Vehicle__c car) {
         system.debug('TEST' +car.Vehicle_Make__c);
         car.Status__c = 'Checked In';
-system.debug('TEST' +car.id);
-        Rental_Contract__c contract = [SELECT id,Vehicle__c,Status__c FROM Rental_Contract__c WHERE Vehicle__c = :car.Id AND status__c != 'Checked in' limit 1];
+        system.debug('TEST' +car.id);
+        Rental_Contract__c contract = [SELECT id,Vehicle__c,Status__c FROM Rental_Contract__c WHERE Vehicle__c = :car.Id AND status__c != 'Closed' limit 1];
         system.debug('TEST' +contract.Status__c);
         contract.Status__c = 'Closed';
         update contract;
