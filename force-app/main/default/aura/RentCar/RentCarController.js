@@ -56,12 +56,26 @@
     setPrice : function(component, event, helper) {
         var issueDate = new Date(component.get("v.newRental.Issue_Date__c"));
         var returnDate = new Date(component.get("v.newRental.Expected_Return_Date__c"));
+        var currentCountry = component.get("v.newRental.Company__r.BillingCountry");
         // To calculate the time difference of two dates
         var Difference_In_Time = returnDate.getTime() - issueDate.getTime();
         // To calculate the no. of days between two dates
         var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
         console.log(Difference_In_Days);
-        var Price = Difference_In_Days * 25.77;
+        console.log(currentCountry);
+        if (currentCountry == 'USA') {
+            var Price = Difference_In_Days * 25.77; 
+        }
+        else if (currentCountry == 'UK') {
+            var Price = (Difference_In_Days * 25.77) * 0.74;
+        }
+        else if (currentCountry == 'Singapore') {
+            var Price = (Difference_In_Days * 25.77) * 1.36;
+        }
+        else {
+            var Price = Difference_In_Days * 25.77; 
+        }
+        
         component.find("priceField").set("v.value", '$' + Price);
     }
 })

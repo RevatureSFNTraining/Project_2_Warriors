@@ -8,7 +8,7 @@ public class CarRentalController {
         } else {
             rental.Customer__c = existingContacts[0].id;
         }
-        Account relatedAccount = [SELECT Id FROM Account where Name = 'Edge Communications'];
+        Account relatedAccount = [SELECT Id FROM Account where Name = 'United Oil & Gas, Singapore'];
         rental.Company__c = relatedAccount.Id;
         upsert rental;
         return rental;  

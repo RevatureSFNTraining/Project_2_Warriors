@@ -23,10 +23,12 @@
     <thead>
     <tr class="slds-text-heading_label">
     <th scope="col"><div class="slds-truncate" title="Name">Vehicle Name</div></th>
+    <th scope="col"><div class="slds-truncate" title="Name">Vehicle Type</div></th>
     <th scope="col"><div class="slds-truncate" title="Type">Vehicle Make</div></th>
     <th scope="col"><div class="slds-truncate" title="Billing State">Vehicle Model</div></th>
     <th scope="col"><div class="slds-truncate" title="Billing City">Vehicle Year</div></th>
     <th scope="col"><div class="slds-truncate" title="Phone">Status</div></th>
+    <th scope="col"><div class="slds-truncate" title="Phone">Description</div></th>
     </tr>
     </thead>
     <tbody>
@@ -35,10 +37,12 @@
     <tr>
      
     <td><div class="slds-truncate" title="{!veh.Name}">{!veh.Name}</div></td>
+    <td><div class="slds-truncate" title="{!veh.Vehicle_Type__c}">{!veh.Vehicle_Type__c}</div></td>
     <td><div class="slds-truncate" title="{!veh.Vehicle_Make__c}">{!veh.Vehicle_Make__c}</div></td>
     <td><div class="slds-truncate" title="{!veh.Vehicle_Model__c}">{!veh.Vehicle_Model__c}</div></td>
     <td><div class="slds-truncate" title="{!veh.Vehicle_Year__c}">{!veh.Vehicle_Year__c}</div></td>
     <td><div class="slds-truncate" title="{!veh.Status__c}">{!veh.Status__c}</div></td>
+    <td><div class="slds-truncate" title="{!veh.Description__c}">{!veh.Description__c}</div></td>
      
     </tr>
     </aura:iteration>
