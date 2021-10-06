@@ -1,0 +1,50 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome" controller="NavListController">
+    <aura:html tag="style">
+        Body { width: 50%; margin: auto; padding-bottom: 20px; } .nav { margin: auto; box-shadow: 0px -4px; padding-bottom: 10px; } .Header { display: block; margin: 16px auto; background-image: url(/resource/logo); background-size: 300px 175px; width: 300px;
+        height: 175px; }
+    </aura:html>
+
+
+    <!--locked dropdown for account-->
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:attribute name="depots" type="Depot__c[]" />
+    <aura:attribute name="accLocked" type="Boolean" default="false" />
+    <aura:attribute name="depLocked" type="Boolean" default="false" />
+    <aura:attribute name="loadingAcct" type="String" default="" />
+    <aura:attribute name="loadingCont" type="String" default="" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+
+    <aura:registerEvent name="navInfo" type="c:navInfo" />
+
+
+
+
+
+    <!--only need to activate event on contact update because contacts only have 1 account-->
+    <div class="Header" />
+    <lightning:spinner variant="brand" size="large" aura:id="Id_spinner" class="slds-hide" />
+    <h1>{!v.loadingAcct} {!v.loadingCont}</h1>
+    <div class="nav slds-card">
+
+
+        <div class="card">
+            <lightning:select aura:id="selectAcc" name="selectAcc" label="Select your company:  " disabled="{!v.accLocked}" required="true" onchange="{!c.updateCont}">
+                <option text="Choose your Company:" selected="true" />
+                <aura:iteration items="{!v.accounts}" var="acc" indexVar="index">
+                    <option value="{!index}">{!index + 1}. {!acc.Name} </option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+        <div class="card">
+            <!--when you update depot, update event variables and fire it.-->
+            <lightning:select aura:id="selectDepot" name="selectDepot" label="Select your Depot:  " disabled="{!v.depLocked}" required="true" onchange="{!c.navInfoEvent}">
+                <option text="Choose your Depot:" selected="true" />
+                <aura:iteration items="{!v.depots}" var="dep" indexVar="i">
+                    <option value="{!i}">{!i + 1}. {!dep.Name} </option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+    </div>
+</aura:component>

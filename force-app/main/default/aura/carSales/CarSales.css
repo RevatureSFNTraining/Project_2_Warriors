@@ -1,0 +1,23 @@
+.THIS {
+    /*background-image: url('/resource/1632856185000/background');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background-attachment: fixed;     
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.THIS button.slds-button.slds-align_absolute-center.slds-section__title-action {
+    --sds-c-button-brand-color-background : #a20000;
+    background-color: #a20000;
+    color: white;
+}
+
+.THIS button.slds-button.slds-align_absolute-center.slds-section__title-action:focus {
+    background-color: #a20000;
+    color: white;
+} 
+
+.THIS .slds-section__content{
+    margin-right:40%;
+}

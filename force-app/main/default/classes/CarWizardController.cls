@@ -27,7 +27,7 @@ public class CarWizardController
         tran.id = aNewTran.Id; 
         vec.id = anewv.id; 
         
-        return page.SellACar; 
+        return page.SellACar;
     } // end of start()
     
     // send user to page for filling out Company Information

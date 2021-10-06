@@ -1,0 +1,20 @@
+.THIS html {
+    background-attachment: fixed;
+    background-image: url(https://curious-wolf-df3vuo-dev-ed.lightning.force.com/resource/background);
+    font-size: 16px;
+}
+
+.THIS .slot {
+    padding-top: 16px;
+}
+
+.THIS .test {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px -4px;
+}
+
+.THIS hr {
+    padding: 0px;
+    margin: 0px;
+}

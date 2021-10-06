@@ -1,0 +1,59 @@
+<aura:component>
+    <lightning:card title="" footer="">
+        <aura:set attribute="title">
+            <lightning:accordion aura:id="accordion" activeSectionName="A">
+                <lightning:accordionSection name="A" label="Rental Requirements">
+                    <aura:set attribute="body">
+                        <strong>Age Requirements</strong>
+                        <p>What are age requirements for renting?</p>
+                        <p>The minimum age requirement for renting is 23.</p>
+                        <br />
+                        <strong>Credential Requirements</strong>
+                        <p>Do you require a deposit before renting?</p>
+                        <p>No, payment will be initiated once you make a reservation for your vehicle.</p>
+                    </aura:set>
+                </lightning:accordionSection>
+                <lightning:accordionSection name="B" label="Reservations">
+                    <strong>Changing Your Reservation</strong>
+                    <p>How can I change my reservation?</p>
+                    <p>You can change your reservation by signing in. Once you have signed in, you can go to your reservations under "Reservations" and modify your reservation.</p>
+                    <br />
+                    <strong>Viewing Your Reservation</strong>
+                    <p>How can I view my reservation?</p>
+                    <p>You can view your reservation by signing in. Once you have signed in, you can go to your reservations under "Reservations" and view your reservations.</p>
+                </lightning:accordionSection>
+                <lightning:accordionSection name="C" label="Locations">
+                    <strong>Locations</strong>
+                    <p>Where can I find the locations?</p>
+                    <p>The locations can be viewed here: <a href="#">Depot Locations</a></p>
+                    <br />
+                </lightning:accordionSection>
+                <lightning:accordionSection name="D" label="Rental Services">
+                    <strong>Insurance</strong>
+                    <p>What insurance policy do you offer on the vehicles?</p>
+                    <p>We require you to provide your own auto insurance on the vehicle and provide the ID number at the reservation page (e.g. Geico Insurance, ID/Policy Number with Geico).</p>
+                    <br />
+                </lightning:accordionSection>
+                <lightning:accordionSection name="E" label="Cars">
+                    <strong>Types of Vehicles</strong>
+                    <p>What types of vehicles do you offer?</p>
+                    <p>Standard Car, Truck, Van, and Limousine.</p>
+                    <br />
+                    <strong>Vehicle Rates</strong>
+                    <p>What are your rates for your vehicles?</p>
+                    <p>The rates depend on the type of vehicle you are reserving.</p>
+                </lightning:accordionSection>
+                <lightning:accordionSection name="F" label="Rental Policies">
+                    <strong>Smoking</strong>
+                    <p>Is smoking allowed on the vehicles?</p>
+                    <p>Unfortunately no, we do not allow smoking and it is prohibited when inside the vehicle.</p>
+                </lightning:accordionSection>
+                <lightning:accordionSection name="G" label="Payment">
+                    <strong>Types of Payment</strong>
+                    <p>What are the forms of payment you accept?</p>
+                    <p>We accept only payments in the form of card payment. Due to COVID, we are unable to accept cash payments at the moment.</p>
+                </lightning:accordionSection>
+            </lightning:accordion>
+        </aura:set>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,27 @@
+<aura:component >
+    <!-- page container -->
+    <div class="slds-container_medium slds-container_center">
+        <!-- grid container -->
+        <div class="slds-grid slds-grid_vertical">
+            <!-- grid item -->
+            <div class="slds-col slds-m-top_x-small slds-size_1-of-1" style="border: 1px solid black;border-bottom:0;">
+                <c:faqHeader />
+            </div>
+            
+            <!-- grid item -->
+            <div class="slds-col slds-m-bottom_x-small slds-size_1-of-1" style="border: 1px solid black;border-top:0;">
+                <c:faqAccordion />
+            </div>
+            
+            <!-- grid item -->
+            <div class="slds-col slds-size_1-of-1" style="border: 1px solid black;border-bottom:0;">
+                <c:contactFormHeader />
+            </div>
+            
+            <!-- grid item -->
+            <div class="slds-col slds-m-bottom_x-small slds-size_1-of-1" style="border: 1px solid black;border-top:0;">
+                <c:contactForm />
+            </div>
+        </div>
+    </div>
+</aura:component>

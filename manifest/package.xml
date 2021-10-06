@@ -3,6 +3,7 @@
     <types>
         <members>*</members>
         <members>CarListController</members>
+        <members>CarSalesController</members>
         <members>CarWizardController</members>
         <members>CarWizardControllerTest</members>
         <members>CaseController</members>
@@ -52,6 +53,7 @@
         <name>ApexTestSuite</name>
     </types>
     <types>
+        <members>Discount__c</members>
         <members>*</members>
         <name>CustomObject</name>
     </types>
@@ -94,6 +96,10 @@
     <types>
         <members>*</members>
         <name>Role</name>
+    </types>
+    <types>
+        <members>carSales</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>*</members>
