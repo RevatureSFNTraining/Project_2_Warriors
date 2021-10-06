@@ -29,4 +29,4 @@
                 Then the Discount_Percent__c field of that record can be passed to the rental price calculator-->
         </div>
     </div>   
-</aura:component>	
+</aura:component>

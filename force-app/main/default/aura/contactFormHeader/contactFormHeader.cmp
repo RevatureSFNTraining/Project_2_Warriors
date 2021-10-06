@@ -3,4 +3,4 @@
         <div class="slds-text-title_caps slds-text-align_center">Need to get in touch?</div>
         <div class="slds-text-heading_large slds-text-align_center">CONTACT US</div>
     </lightning:card>
-</aura:component>	
+</aura:component>

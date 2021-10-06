@@ -2,4 +2,3 @@
     <aura:attribute name="car" type="Vehicle__c" />
     <aura:attribute name="purchase" type="Purchase_Transaction__c" />
 </aura:event>
-
