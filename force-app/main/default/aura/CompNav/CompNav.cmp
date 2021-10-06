@@ -1,6 +1,7 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome" controller="NavListController">
     <aura:html tag="style">
-        Body { width: 50%; margin: auto; padding-bottom: 20px; } .nav { margin: auto; box-shadow: 0px -4px; padding-bottom: 10px; }
+        Body { width: 50%; margin: auto; padding-bottom: 20px; } .nav { margin: auto; box-shadow: 0px -4px; padding-bottom: 10px; } .Header { display: block; margin: 16px auto; background-image: url(/resource/logo); background-size: 300px 175px; width: 300px;
+        height: 175px; }
     </aura:html>
 
 
@@ -38,7 +39,7 @@
         </div>
         <div class="card">
             <!--when you update depot, update event variables and fire it.-->
-            <lightning:select aura:id="selectDepot" name="selectDepot" label="Select your Debot:  " disabled="{!v.depLocked}" required="true" onchange="{!c.navInfoEvent}">
+            <lightning:select aura:id="selectDepot" name="selectDepot" label="Select your Depot:  " disabled="{!v.depLocked}" required="true" onchange="{!c.navInfoEvent}">
                 <option text="Choose your Depot:" selected="true" />
                 <aura:iteration items="{!v.depots}" var="dep" indexVar="i">
                     <option value="{!i}">{!i + 1}. {!dep.Name} </option>

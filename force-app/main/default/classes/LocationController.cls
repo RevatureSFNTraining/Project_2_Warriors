@@ -6,7 +6,7 @@ public class LocationController {
         HttpRequest request = new HttpRequest();
         
         // You need to go to the "Remote Site Setting" and add the link below 1st.
-        request.setEndpoint('https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708/73.222.231.242');
+        request.setEndpoint('https://geolocation-db.com/json/73.37.197.229');
         request.setMethod('GET');
         HttpResponse response = http.send(request);
         
