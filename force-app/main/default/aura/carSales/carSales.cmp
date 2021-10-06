@@ -12,7 +12,7 @@
     
     <c:PicklistValues sObjectName="Vehicle__c" fieldName="Vehicle_Make__c" picklistValues="{!v.picklistValues}" />   
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <aura:handler name="navInfo" event="c:navInfo" action="{!c.handleApplicationEvent}"/>
+    <aura:handler event="c:navInfo" action="{!c.handleApplicationEvent}"/>
     <div class="slds-section slds-is-open" aura:id="companyInfo">        
         <h3 class="slds-section__title">
             <button aria-controls="companySection" class="slds-button slds-align_absolute-center slds-section__title-action">
@@ -35,16 +35,16 @@
                     value="{!v.newTran.Name}"
                     messageWhenValueMissing="You need to write a Name"/>
                 <lightning:select  label="Company" name="companyPicklist" value="{!v.newTran.Company__c}">           
-                    <option value="">Select Company...</option>
-                    <aura:iteration items="{!v.picklistCompanies}" var="comp">
+                    <option value="{!v.account.Id}">{!v.account.Name}</option>
+                    <!--<aura:iteration items="{!v.picklistCompanies}" var="comp">
                         <option value="{!comp.Id}">{!comp.Name}</option>
-                    </aura:iteration>
+                    </aura:iteration>-->
                 </lightning:select>
                 <lightning:select  label="Depot" name="depotPicklist" value="{!v.newTran.Depot__c}">           
-                    <option value="">Select Depot...</option>
-                    <aura:iteration items="{!v.picklistDepots}" var="dep">
+                    <option value="{!v.depot.Id}">{!v.depot.Name}</option>
+                    <!--<aura:iteration items="{!v.picklistDepots}" var="dep">
                         <option value="{!dep.Id}">{!dep.Name}</option>
-                    </aura:iteration>
+                    </aura:iteration>-->
                 </lightning:select>
                 <lightning:input label="Price of Vehicle"
                     name="tranPrice"
