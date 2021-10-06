@@ -3,14 +3,16 @@
     <aura:attribute name="discountChosen" type="Discount__c" default="{'Name': '', 'Discount_Code__c': '', 'Discount_Percent__c': 0}" />
     <aura:attribute name="discountOptions" type="List"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="passDiscount" type="c:passDiscount" />
+    
     <div>
-        <h3 class="slds-text-heading_large slds-align_absolute-center">
+        <h3 class="slds-text-heading_small slds-align_absolute-center">
             Deals and Promotions
         </h3>
         <div>
             <form>
                 <lightning:radioGroup name="deals"
-                            label="Choose a deal for extra savings!" 
+                            label="Choose a deal or enter your discount code below!" 
                             options="{!v.discountOptions}"
                             value="{!v.discountChosen.Discount_Code__c}"
                             type="radio"

@@ -1,8 +1,9 @@
 .THIS {
     /*background-image: url('/resource/1632856185000/background');
     background-repeat: no-repeat;
-    background-size: cover;*/
-    background-attachment: fixed;     
+    background-size: cover;
+    background-attachment: fixed;*/
+    margin: auto;  
 }
 
 .THIS button.slds-button.slds-align_absolute-center.slds-section__title-action {
@@ -17,5 +18,6 @@
 } 
 
 .THIS .slds-section__content{
-    margin-right:40%;
+    margin-right:20%;
+    margin-left: 20%;
 }
