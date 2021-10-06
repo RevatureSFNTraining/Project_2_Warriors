@@ -1,0 +1,38 @@
+<aura:component controller="DisplayCarList">
+    <aura:attribute name="vehicleList" type="Vehicle__c[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.getCars}" />
+    <br/>
+    <br/>
+    <div class="slds">
+    <div style="font-size:28px;font-weight:bold;margin-left:20px">
+    Cars for Rent
+    </div>
+    <br/>
+    <br/>
+    <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+    <thead>
+    <tr class="slds-text-heading_label">
+    <th scope="col"><div class="slds-truncate" title="Name">Vehicle Name</div></th>
+    <th scope="col"><div class="slds-truncate" title="Type">Vehicle Make</div></th>
+    <th scope="col"><div class="slds-truncate" title="Billing State">Vehicle Model</div></th>
+    <th scope="col"><div class="slds-truncate" title="Billing City">Vehicle Year</div></th>
+    <th scope="col"><div class="slds-truncate" title="Phone">Status</div></th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Use the Apex model and controller to fetch server side data -->
+    <aura:iteration items="{!v.vehicleList}" var="veh">
+    <tr>
+     
+    <td><div class="slds-truncate" title="{!veh.Name}">{!veh.Name}</div></td>
+    <td><div class="slds-truncate" title="{!veh.Vehicle_Make__c}">{!veh.Vehicle_Make__c}</div></td>
+    <td><div class="slds-truncate" title="{!veh.Vehicle_Model__c}">{!veh.Vehicle_Model__c}</div></td>
+    <td><div class="slds-truncate" title="{!veh.Vehicle_Year__c}">{!veh.Vehicle_Year__c}</div></td>
+    <td><div class="slds-truncate" title="{!veh.Status__c}">{!veh.Status__c}</div></td>
+     
+    </tr>
+    </aura:iteration>
+    </tbody>
+    </table>
+    </div>
+</aura:component>

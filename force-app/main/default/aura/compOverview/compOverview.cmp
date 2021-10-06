@@ -1,7 +1,6 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes">
     <aura:html tag="style">
-        html { background-attachment: fixed; background-image: url(https://curious-wolf-df3vuo-dev-ed.lightning.force.com/resource/background); font-size: 16px; } .slot{ padding-top: 16px; } .test{ background-color: white; border-radius: 10px; box-shadow: 0px
-        -4px; } hr{ padding: 0px; margin: 0px; }
+        html { background-attachment: fixed; background-image: url(/resource/background); font-size: 16px; } .slot{ padding-top: 16px; } .test{ background-color: white; border-radius: 10px; box-shadow: 0px -4px; } hr{ padding: 0px; margin: 0px; }
     </aura:html>
     <!--display nav-->
     <div class="slot">
@@ -15,17 +14,24 @@
             <lightning:tab label="Landing" id="one">
                 <h1>Welcome!</h1>
                 <hr/> Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
+                <c:topThreeList/>
             </lightning:tab>
             <lightning:tab label="Rent Car" id="two">
-                Put your Component here!!!
+                <c:CarList/>
+                <c:RentCar/>
+                <c:dealsAndPromos/>
             </lightning:tab>
-            <lightning:tab label="Another Page I don't Remember" id="three">
-                Put your Component here!!!
+            <lightning:tab label="Sell a Car" id="three">
+                <c:carSales/>
             </lightning:tab>
             <lightning:tab label="FAQ" id="four">
-                Put your Component here!!!
+                <c:faqLayout />
             </lightning:tab>
-            <lightning:tab label="Return Car" id="five">
+            <lightning:tab label="Careers" id="five">
+
+            </lightning:tab>
+
+            <lightning:tab label="Return Car" id="six">
                 <c:returnCar/>
             </lightning:tab>
         </lightning:tabset>

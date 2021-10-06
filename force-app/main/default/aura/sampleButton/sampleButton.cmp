@@ -1,0 +1,5 @@
+<aura:component>
+    <div class="slds-m-left_x-large">
+        <lightning:button label="Cases" title="Click to submit a case." variant="brand" iconName="action:call" />
+    </div>
+</aura:component>	
