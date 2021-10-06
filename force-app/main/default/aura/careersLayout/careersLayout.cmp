@@ -1,0 +1,17 @@
+<aura:component >
+    <div class="slds-container_medium slds-container_center">
+        <div class="slds-grid slds-grid_vertical">
+            <!-- header -->
+            <header class="slds-col slds-m-top_x-small slds-m-bottom_x-small slds-size_1-of-1">
+                <c:careersHeader />
+            </header>
+            <!-- content -->
+            <section class="slds-col slds-m-bottom_x-small slds-size_1-of-1">
+                <c:careersBlurb />
+            </section>
+            <section class="slds-col slds-m-bottom_x-small slds-size_1-of-1">
+                <c:careersForm />
+            </section>
+        </div>
+    </div>
+</aura:component>

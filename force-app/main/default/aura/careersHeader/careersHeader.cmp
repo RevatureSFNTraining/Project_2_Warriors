@@ -1,0 +1,6 @@
+<aura:component >
+    <lightning:card title="" footer="">
+        <div class="slds-text-title_caps slds-text-align_center">Work with us</div>
+        <div class="slds-text-heading_large slds-text-align_center">CAREERS</div>
+    </lightning:card>	
+</aura:component>

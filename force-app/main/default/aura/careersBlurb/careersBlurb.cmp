@@ -1,0 +1,63 @@
+<aura:component >
+    <lightning:card title="" footer="">
+        <div class="slds-grid slds-grid_vertical slds-gutters slds-m-left_xxx-small slds-m-right_xxx-small">
+            <!-- component header -->
+            <div class="slds-col slds-size_1-of-1">
+                <div class="slds-text-heading_medium slds-text-align_center">Want to start or grow a career with us?</div>
+                <div class="slds-text-title slds-text-align_center">
+                    We're a long-standing company that loves its employees. 
+                    Learn more about why you should join us and then fill out an application today.
+                </div>
+            </div>
+            <br />
+            
+        </div>
+        
+        <!-- component blurbs -->
+        <div class="slds-grid slds-gutters slds-gutters slds-m-bottom_small">
+            <div class="slds-col slds-text-align_center slds-m-left_xxx-small slds-m-right_xxx-small">
+                <strong>Opportunities</strong>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam justo orci, rutrum a tortor a volutpat.</p>
+            </div>
+            <div class="slds-col slds-text-align_center">
+                <strong>Benefits</strong>
+                <p>Donec fermentum ante quam, a congue ex aliquet quis. Etiam ornare imperdiet scelerisque.</p>
+            </div>
+            <div class="slds-col slds-text-align_center">
+                <strong>Training</strong>
+                <p>Mauris facilisis lorem eros, aliquam tristique nibh gravida nec. Phasellus urna nulla, fermentum id placerat a, feugiat et enim.</p>
+            </div>  
+        </div>
+        
+        <hr style="display: block;width: 5%;margin:3.5% auto" />
+        
+        <!-- component carousel -->
+        <div class="slds-grid slds-grid_vertical slds-gutters slds-m-left_xxx-small slds-m-right_xxx-small">
+            <div class="slds-col slds-size_1-of-1">
+                <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+                    <lightning:carouselImage
+                                             src = "/resource/carousel11"
+                                             header = "Product Life"
+                                             description = "A picture of Demo Day."
+                                             alternativeText = "Second card accessible description."
+                                             href = "">
+                    </lightning:carouselImage>
+                    <lightning:carouselImage
+                                             src = "/resource/carousel02"
+                                             header = "We love ScrumBan"
+                                             description = "A picture of our scrum master."
+                                             alternativeText = "Second card accessible description."
+                                             href = "">
+                    </lightning:carouselImage>
+                    <lightning:carouselImage
+                                             src = "/resource/carousel33"
+                                             header = "Top Mechanics in the Industry"
+                                             description = "A picture of one of our mechanics."
+                                             alternativeText = "Third card accessible description."
+                                             href = "">
+                    </lightning:carouselImage>
+                </lightning:carousel>
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>

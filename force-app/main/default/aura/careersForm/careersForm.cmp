@@ -1,0 +1,152 @@
+<aura:component controller="JobApplicationController" access="global">
+    <!-- attributes -->
+    <aura:attribute name="newApplicant" type="Job_Application__c"
+                    default="{'sobjectType': 'Job_Application__c'}"/>
+    
+    <!-- component -->
+    <lightning:card title="" footer="">
+        <!-- component header -->
+        <div class="slds-text-title_caps slds-text-align_center">Join our Team</div>
+        <div class="slds-text-heading_large slds-text-align_center">General Application of Employment</div>
+        <hr style="display: block;width: 5%;margin:3% auto" />
+        
+        <!-- component content -->
+        <form class="slds-p-left_x-small slds-p-right_x-small">
+            <fieldset class="slds-form-element slds-form-element_compound slds-m-bottom_x-small">
+                <legend class="slds-form-element__legend slds-form-element__label">Contact information</legend>
+                <div class="slds-form-element__control">
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="ApplicantName" 
+                                                     label="Name" 
+                                                     value="{!v.newApplicant.Applicant_Name__c}"
+                                                     placeholder="Full name"
+                                                     required="true"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="ApplicantLocation" 
+                                                     label="Location"
+                                                     value="{!v.newApplicant.Applicant_Location__c}"
+                                                     placeholder="Location"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="ApplicantPhone"
+                                                     type="tel"
+                                                     label="Phone"
+                                                     value="{!v.newApplicant.Applicant_Phone__c}"
+                                                     placeholder="(800) 555-5555"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="ApplicantEmail"
+                                                     type="email"
+                                                     label="Email"
+                                                     value="{!v.newApplicant.Applicant_Email__c}"
+                                                     placeholder="youraddress@company.com"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <legend class="slds-form-element__legend slds-form-element__label">Applicant information</legend>
+                <div class="slds-form-element__control">
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <p class="slds-text-title">Willing to relocate?</p>
+                                    <force:inputField aura:id="relocate"
+                                                      value="{!v.newApplicant.Willing_to_Relocate__c}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <p class="slds-text-title">Willing to work remotely?</p>
+                                    <force:inputField aura:id="remote"
+                                                      value="{!v.newApplicant.Willing_to_Work_Remotely__c }" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <p class="slds-text-title">Desired salary</p>
+                                    <force:inputField aura:id="salary"
+                                                      value="{!v.newApplicant.Desired_Salary__c}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <p class="slds-text-title">Years of experience</p>
+                                    <force:inputField aura:id="cleanstatus"
+                                                      value="{!v.newApplicant.Years_of_Experience__c}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <legend class="slds-form-element__legend slds-form-element__label">Employment information</legend>
+                <div class="slds-form-element__control">
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <p class="slds-text-title">Area of Expertise</p>
+                                    <force:inputField aura:id="cleanstatus"
+                                                      value="{!v.newApplicant.Area_of_Expertise__c}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <p class="slds-text-title">Why do you want to work for us?</p>
+                                    <lightning:input name="ApplicantReason"
+                                                     label="Reason"
+                                                     value="{!v.newApplicant.Applicant_Reason__c}"
+                                                     placeholder="Type here"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <lightning:button variant="brand"
+                              label="Submit"
+                              title="Submit form" 
+                              onclick="{!c.createApplicant}"/>
+            
+            <lightning:button variant="brand-outline"
+                              label="Cancel" 
+                              title="Submit form" 
+                              onclick="{!c.close}"/>
+            
+        </form>
+    </lightning:card>
+</aura:component>
