@@ -5,6 +5,6 @@
     <columns>Status__c</columns>
     <columns>Customer__c</columns>
     <columns>NAME</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>My Contract View</label>
 </ListView>

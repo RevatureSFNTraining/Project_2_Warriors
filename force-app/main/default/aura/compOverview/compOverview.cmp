@@ -16,23 +16,24 @@
                 <hr/> Welcome to Car Rental Portal. We are excited to see you here. Please select a rental company and one of its depots before renting out a vehicle.
                 <c:topThreeList/>
             </lightning:tab>
-            <lightning:tab label="Rent Car" id="two">
+            <lightning:tab label="Sell a Car" id="two">
+                <c:carSales/>
+            </lightning:tab>
+            <lightning:tab label="Rent Car" id="three">
                 <c:CarList/>
                 <c:RentCar/>
             </lightning:tab>
-            <lightning:tab label="Sell a Car" id="three">
-                <c:carSales/>
-            </lightning:tab>
-            <lightning:tab label="FAQ" id="four">
-                <c:faqLayout />
-            </lightning:tab>
-            <lightning:tab label="Careers" id="five">
-
-            </lightning:tab>
-
-            <lightning:tab label="Return Car" id="six">
+            <lightning:tab label="Return Car" id="four">
                 <c:returnCar/>
             </lightning:tab>
+            <lightning:tab label="FAQ" id="five">
+                <c:faqLayout />
+            </lightning:tab>
+            <lightning:tab label="Careers" id="six">
+
+            </lightning:tab>
+
+
         </lightning:tabset>
 
     </div>

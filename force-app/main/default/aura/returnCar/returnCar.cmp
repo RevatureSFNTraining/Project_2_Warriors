@@ -43,24 +43,23 @@
         <lightning:layout>
             <!-- Load car details view with button to turn in -->
 
-            <div class="slds-box">
-                <lightning:layoutItem size="3" padding="around-small">
-                    Make: {!v.Car.Vehicle_Make__c}
-                </lightning:layoutItem>
-                <lightning:layoutItem size="3" padding="around-small">
-                    Model: {!v.Car.Vehicle_Model__c}
-                </lightning:layoutItem>
-                <lightning:layoutItem size="3" padding="around-small">
-                    Year: {!v.Car.Vehicle_Year__c}
-                </lightning:layoutItem>
-                <lightning:layoutItem size="3" padding="around-small">
-                    VIN: {!v.Car.Vehicle_Identification_Number__c}
-                </lightning:layoutItem>
-                <lightning:layoutItem size="3" padding="around-small">
-                    Status: {!v.Car.Status__c}
+            <lightning:layoutItem size="2" padding="around-small">
+                Make: {!v.Car.Vehicle_Make__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">
+                Model: {!v.Car.Vehicle_Model__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">
+                Year: {!v.Car.Vehicle_Year__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">
+                VIN: {!v.Car.Vehicle_Identification_Number__c}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">
+                Status: {!v.Car.Status__c}
 
-                </lightning:layoutItem>
-            </div>
+            </lightning:layoutItem>
+
         </lightning:layout>
 
         <!-- Load car details view with button to turn in -->
