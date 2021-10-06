@@ -1,4 +1,5 @@
-public with sharing class CarRentalControllerTest {
+@isTest
+public class CarRentalControllerTest {
     public CarRentalControllerTest() {
 
     }
