@@ -23,7 +23,7 @@
                 Put your Component here!!!
             </lightning:tab>
             <lightning:tab label="FAQ" id="four">
-                Put your Component here!!!
+                <c:faqLayout />
             </lightning:tab>
             <lightning:tab label="Return Car" id="five">
                 <c:returnCar/>
