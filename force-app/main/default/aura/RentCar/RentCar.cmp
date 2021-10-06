@@ -1,0 +1,57 @@
+<aura:component controller="CarRentalController">
+    <aura:attribute name="newRental" type="Rental_Contract__c" default="{'sObjectType': 'Rental_Contract__c', 'Name' : '', 'Issue_Date__c':'', 
+                                                                        'Expected_Return_Date__c':'', 'Status__c':'Active', 'Vehicle__c':''}" access="global" />
+    <aura:attribute name="newContact" type="Contact" default="{'sObjectType': 'Contact', 'FirstName': '', 'LastName': '','Birthdate': '',
+                                                                'Email': ''}" access="global"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="picklistCars" type="Vehicle__c[]"/> 
+    <div class="slds-section slds-is-open" aura:id="rentalInfo">
+        <div class= "slds-section__content" id="rentalSection">
+            <form>
+                <lightning:select  label="Car" name="carPicklist" value="{!v.newRental.Vehicle__c}">           
+                    <option value="">Select Car...</option>
+                    <aura:iteration items="{!v.picklistCars}" var="car">
+                        <option value="{!car.Id}">{!car.Name}</option>
+                    </aura:iteration>
+                </lightning:select>
+                <lightning:input label="First Name:"
+                    name="firstName"
+                    required="true"
+                    value="{!v.newContact.FirstName}"
+                    messageWhenValueMissing="You need to write a First Name"/>
+                    <lightning:input label="Last Name:"
+                    name="lastName"
+                    required="true"
+                    value="{!v.newContact.LastName}"
+                    messageWhenValueMissing="You need to write a Last Name"/>
+                    <lightning:input label="Birthday:"
+                    name="birthday"
+                    type="date"
+                    required="true"
+                    value="{!v.newContact.Birthdate}"
+                    messageWhenValueMissing="You need to write a Birthday"/>
+                    <lightning:input label="Email:"
+                    name="email"
+                    required="true"
+                    value="{!v.newContact.Email}"
+                    messageWhenValueMissing="You need to write an Email"/>
+                    <lightning:input label="Issue Date:"
+                    name="issueDate"
+                    required="true"
+                    type="date"
+                    value="{!v.newRental.Issue_Date__c}"
+                    messageWhenValueMissing="You need to put in an Issue Date"/>
+                    <lightning:input label="Expected Return Date:"
+                    name="expectedReturnDate"
+                    required="true"
+                    type="date"
+                    value="{!v.newRental.Expected_Return_Date__c}"
+                    messageWhenValueMissing="You need to put in an Expected Return Date"/>
+            </form>
+        <lightning:button label="Rent" class= "slds-m-top_medium" 
+        variant="success" onclick="{!c.clickCreateRental}"/>
+        </div>
+    </div>  
+
+</aura:component>	
