@@ -1,0 +1,31 @@
+<aura:component controller="TopThreeListController" implements="forceCommunity:availableForAllPageTypes">
+    
+    <!-- Attributes-->
+    <aura:attribute name="cars" type="Vehicle__c[]"/>
+    <!-- / Attributes-->
+    
+    <!-- Initialization -->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <!-- / Initialization -->
+    
+    <lightning:layout class="slds-grid_align-center">
+        <lightning:layoutItem padding="around-small" size="4.5" class="slds-grid_align-center">
+            <div aria-labelledby="itemForm">
+                <fieldset class="slds-box slds-theme_default 
+                                 slds-container_small">
+                    <legend id="carList" class="slds-text-heading_small 
+                                                slds-p-vertical_medium">
+                        <p style="font-size: 3em;">Top 3 Cars</p>
+                    </legend>
+                    <form class="slds-form_stacked" style="padding: 15px 30px 30px">
+                        <aura:iteration items="{!v.cars}" var="car">
+                            <c:popularCar car="{!car}"/>
+                        </aura:iteration>
+                    </form>
+                    <c:location/>
+                </fieldset>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:documentation>
+    <aura:description>
+        The following creates an account with name input. The account is then displayed as an alert. should they hit cancel, an error will display with additional information.</aura:description>
+    <aura:example name="Component2" ref="exampleComponentName" label="Label">
+
+    </aura:example>
+</aura:documentation>

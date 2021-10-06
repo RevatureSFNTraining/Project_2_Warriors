@@ -1,0 +1,1 @@
+{"country_code":"US","country_name":"United States","city":"San Francisco","postal":"94112","latitude":37.7195,"longitude":-122.4411,"IPv4":"73.222.231.242","state":"California"}

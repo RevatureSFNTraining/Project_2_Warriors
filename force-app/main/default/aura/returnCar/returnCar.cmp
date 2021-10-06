@@ -1,0 +1,86 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" controller="ReturningCarController">
+    <!-- refrences APEX controller -->
+    <aura:html tag="style">
+
+
+    </aura:html>
+
+    <aura:attribute name="Car" type="Vehicle__c" />
+    <!-- UPDATE RECORDID when search returns.-->
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="Editable" type="Boolean" default="!{v.newContact.level__c}=='Secondary'" />
+
+
+
+    <!--EVENT HANDLING VARIABLES-->
+    <aura:attribute name="account" type="Account" />
+    <aura:attribute name="depot" type="Depot__c" />
+    <aura:handler event="c:navInfo" action="{!c.handleApplicationEvent}" />
+    <!--EVENT HANDLING VARIBALES-->
+
+
+    <aura:attribute name="searchKeyword" type="String" />
+
+    <div class="slds-card information">
+
+
+
+        <!-- Displays toast notifications -->
+        <div class="information">Vehicle Identification Number:
+            <hr/> *This number was emailed to you during registration, it can also be found on the Dashboard on the driver's side</div>
+        <!-- Search bar by vin,  -->
+        <!--pull in and company and depot as well, proof that others can access this as well -->
+        <lightning:layout>
+            <lightning:layoutItem size="3" padding="around-small">
+                <lightning:input value="{!v.searchKeyword}" required="true" name="searchKey" placeholder="search VIN.." aura:id="searchKey" label="VIN Number: " />
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">
+                <lightning:button onclick="{!c.Search}" variant="brand" label="Search" iconName="utility:search" />
+            </lightning:layoutItem>
+        </lightning:layout>
+
+
+        <lightning:layout>
+            <!-- Load car details view with button to turn in -->
+
+            <div class="slds-box">
+                <lightning:layoutItem size="3" padding="around-small">
+                    Make: {!v.Car.Vehicle_Make__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem size="3" padding="around-small">
+                    Model: {!v.Car.Vehicle_Model__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem size="3" padding="around-small">
+                    Year: {!v.Car.Vehicle_Year__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem size="3" padding="around-small">
+                    VIN: {!v.Car.Vehicle_Identification_Number__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem size="3" padding="around-small">
+                    Status: {!v.Car.Status__c}
+
+                </lightning:layoutItem>
+            </div>
+        </lightning:layout>
+
+        <!-- Load car details view with button to turn in -->
+
+
+
+
+        <aura:if isTrue="{!v.Car.Status__c=='Checked Out'}">
+
+            <lightning:button onclick="{!c.updateCar}" label="Check In" iconName="utility:check" />
+            <aura:set attribute="else">
+                <lightning:button onclick="" label="Checked In" iconName="utility:check" disabled="true" />
+            </aura:set>
+        </aura:if>
+
+
+
+        <!--push button to -->
+
+
+
+    </div>
+</aura:component>
