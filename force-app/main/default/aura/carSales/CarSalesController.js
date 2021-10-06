@@ -160,6 +160,6 @@
         var Dep = event.getParam("depot");
         var Acc = event.getParam("account");
         cmp.set("v.account", Acc);
-        cmp.set("v.depot", Dep);    
+        cmp.set("v.depot", Dep);   
     }
 })

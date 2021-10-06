@@ -32,6 +32,11 @@
             if (state === "SUCCESS") {
                 var getDiscValue = response.getReturnValue();
                 console.log(getDiscValue);
+                var compEvent = component.getEvent("passDiscount");
+                compEvent.setParams({
+                    "discount" : getDiscValue.Discount_Percent__c
+                });
+                compEvent.fire();
             }
             else if (state === "INCOMPLETE") {
                 console.error("INCOMPLETE");
@@ -49,6 +54,15 @@
             }
         });
         $A.enqueueAction(action);
+
+        //var compEvent = component.getEvent("passDiscount");
+        //compEvent.setParams({
+        //    "discount" : getDiscValue.Discount_Percent__c
+        //});
+        //var discountChosen = component.get("{!v.discountChosen}");
+        //console.log("compevent", compEvent);
+        //console.log("discount", discountChosen);
+        //compEvent.fire();
     }
 
 })
