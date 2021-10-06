@@ -1,0 +1,103 @@
+<aura:component controller="contactFormController">
+    <!-- attributes -->
+    <aura:attribute name="newCase" type="Case"
+                    default="{'sobjectType': 'Case'}"/><!-- Default text in this field -->
+    
+    <!-- component -->
+    <lightning:card footer="" title="">
+        <form class="slds-p-left_x-small slds-p-right_x-small">
+            <fieldset class="slds-form-element slds-form-element_compound slds-m-bottom_x-small">
+                <legend class="slds-form-element__legend slds-form-element__label">Contact information</legend>
+                <div class="slds-form-element__control">
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="CaseName" 
+                                                     label="Name" 
+                                                     value="{!v.newCase.SuppliedName}"
+                                                     placeholder="Full name"
+                                                     required="true"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="CaseCompany" 
+                                                     label="Company" 
+                                                     value="{!v.newCase.SuppliedCompany}"
+                                                     placeholder="Company name"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="CasePhone"
+                                                     type="tel"
+                                                     label="Phone"
+                                                     value="{!v.newCase.SuppliedPhone}"
+                                                     placeholder="(800) 555-5555"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="CaseEmail"
+                                                     type="email"
+                                                     label="Email"
+                                                     value="{!v.newCase.SuppliedEmail}"
+                                                     placeholder="youraddress@company.com"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <legend class="slds-form-element__legend slds-form-element__label">Inquiry information</legend>
+                <div class="slds-form-element__control">
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="CaseSubject"
+                                                     label="Subject" 
+                                                     value="{!v.newCase.Subject}"
+                                                     placeholder="Type here..."/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:input name="CaseDescription"
+                                                     label="Description"
+                                                     value="{!v.newCase.Description}"
+                                                     placeholder="Type here..."
+                                                     required="true"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <lightning:button variant="brand"
+                              label="Submit"
+                              title="Submit form" 
+                              onclick="{!c.createCase}"/>
+            
+            <lightning:button variant="brand-outline"
+                              label="Cancel" 
+                              title="Submit form" 
+                              onclick="{!c.close}"/>
+        
+        </form>
+    </lightning:card>
+    
+</aura:component>
