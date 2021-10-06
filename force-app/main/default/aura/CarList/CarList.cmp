@@ -3,12 +3,22 @@
     <aura:handler name="init" value="{!this}" action="{!c.getCars}" />
     <br/>
     <br/>
-    <div class="slds">
-    <div style="font-size:28px;font-weight:bold;margin-left:20px">
-    Cars for Rent
-    </div>
+        <div class="slds-section slds-is-open" aura:id="carInfo">
+            <h3 class="slds-section__title">
+                <button aria-controls="rentalSection" class="slds-button slds-align_absolute-center slds-section__title-action">
+                    <span onclick="{!c.toggleSection}" data-auraID="carInfo">
+                        <lightning:icon iconName="utility:switch"
+                        size="x-small"
+                        class="slds-section__title-action-icon slds-button__icon_center"
+                        alternativeText="button icon" 
+                        />
+                    </span>
+                    <span class="slds-truncate slds-p-horizontal_medium" title="Company Information">Cars Available For Rent</span>
+                </button>
+            </h3>
     <br/>
     <br/>
+    <div class= "slds-section__content" id="carSection">
     <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
     <thead>
     <tr class="slds-text-heading_label">
@@ -34,5 +44,6 @@
     </aura:iteration>
     </tbody>
     </table>
+    </div>
     </div>
 </aura:component>
