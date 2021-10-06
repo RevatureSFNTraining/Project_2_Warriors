@@ -3,18 +3,16 @@ public class CarRentalController {
     public static Rental_Contract__c saveRental(Rental_Contract__c rental, Contact contact){
         upsert contact;
         Account relatedAccount = [SELECT Id FROM Account where Name = 'Edge Communications'];
-        Vehicle__c relatedCar = [SELECT Id FROM Vehicle__c where Name = 'Car 1'];
         rental.Customer__c = contact.Id;
-        rental.Vehicle__c = relatedCar.Id;
         rental.Company__c = relatedAccount.Id;
         upsert rental;
         return rental;  
     }
 
     @AuraEnabled
-    public static List<Account> getCompanies(){
-        List<Account> companyList = [SELECT Id, Name FROM Account];
-        return companyList;
+    public static List<Vehicle__c> getCars(){
+        List<Vehicle__c> carList = [SELECT Id, Name FROM Vehicle__c WHERE Vehicle__c.Status__c = 'Checked In'];
+        return carList;
     }
 
     @AuraEnabled

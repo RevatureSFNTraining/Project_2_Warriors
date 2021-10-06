@@ -1,19 +1,12 @@
 ({
-    /*doInit : function(component) {
-        var action = component.get("c.getCompanies");
+    doInit : function(component) {
+        var action = component.get("c.getCars");
         action.setCallback(this, function(response) {
             var list = response.getReturnValue();
-            component.set("v.picklistCompanies", list);
+            component.set("v.picklistCars", list);
         })
         $A.enqueueAction(action);
-
-        var depAction = component.get("c.getDepots");
-        depAction.setCallback(this, function(response){
-            var depList = response.getReturnValue();
-            component.set("v.picklistDepots", depList);
-        })
-        $A.enqueueAction(depAction);
-    },*/
+    },
 
     clickCreateRental : function(component, event, helper) {
         var newContact = component.get("v.newContact");
@@ -44,7 +37,7 @@
         });
         $A.enqueueAction(action);
         component.set("v.newRental",{'sObjectType': 'Rental_Contract__c', 'Name' : '', 'Issue_Date__c':'', 
-                                    'Expected_Return_Date__c':'', 'Status__c':'Active'});
+                                    'Expected_Return_Date__c':'', 'Status__c':'Active', 'Vehicle__c':''});
         component.set("v.newContact",{'sObjectType': 'Contact', 'FirstName': '', 'LastName': '','Birthdate': '',
                                         'Email': ''});
     }
