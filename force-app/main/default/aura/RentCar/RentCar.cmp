@@ -3,10 +3,24 @@
                                                                         'Expected_Return_Date__c':'', 'Status__c':'Active', 'Vehicle__c':''}" access="global" />
     <aura:attribute name="newContact" type="Contact" default="{'sObjectType': 'Contact', 'FirstName': '', 'LastName': '','Birthdate': '',
                                                                 'Email': ''}" access="global"/>
-    
+    <aura:attribute name="Price" type="Decimal" default="0.0"/>
+    <aura:attribute name="Discount" type="Discount__c" default="{'sObjectType' : 'Discount__c', 'Discount_Code__c' : '', 'Discount_Percent__c' : 0}"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="picklistCars" type="Vehicle__c[]"/> 
+    <aura:handler name="passDiscount" event="c:passDiscount" action = "{!c.handleComponentEvent}" />
     <div class="slds-section slds-is-open" aura:id="rentalInfo">
+        <h3 class="slds-section__title">
+            <button aria-controls="rentalSection" class="slds-button slds-align_absolute-center slds-section__title-action">
+                <span onclick="{!c.toggleSection}" data-auraID="rentalInfo">
+                    <lightning:icon iconName="utility:switch"
+                    size="x-small"
+                    class="slds-section__title-action-icon slds-button__icon_center"
+                    alternativeText="button icon" 
+                    />
+                </span>
+                <span class="slds-truncate slds-p-horizontal_medium" title="Company Information">Rent a Car</span>
+            </button>
+        </h3>
         <div class= "slds-section__content" id="rentalSection">
             <form>
                 <lightning:select  label="Car" name="carPicklist" value="{!v.newRental.Vehicle__c}">           
@@ -30,7 +44,7 @@
                     type="date"
                     required="true"
                     value="{!v.newContact.Birthdate}"
-                    messageWhenValueMissing="You need to write a Birthday"/>
+                    messageWhenValueMissing="You need put in a Birthday"/>
                     <lightning:input label="Email:"
                     name="email"
                     required="true"
@@ -47,11 +61,19 @@
                     required="true"
                     type="date"
                     value="{!v.newRental.Expected_Return_Date__c}"
+                    onchange="{!c.setPrice}"
                     messageWhenValueMissing="You need to put in an Expected Return Date"/>
+                    <lightning:input label="Rental Price"
+                    aura:id="priceField"
+                    name="rentalPrice"
+                    value="{!'$' + v.Price}"
+                    disabled="true"/>
+
             </form>
+
         <lightning:button label="Rent" class= "slds-m-top_medium" 
         variant="success" onclick="{!c.clickCreateRental}"/>
         </div>
     </div>  
-
-</aura:component>	
+    <c:dealsAndPromos />
+</aura:component>
