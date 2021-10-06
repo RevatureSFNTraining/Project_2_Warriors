@@ -1,13 +1,20 @@
 public class CarRentalController {
 	@AuraEnabled
     public static Rental_Contract__c saveRental(Rental_Contract__c rental, Contact contact){
-        upsert contact;
+        List<Contact> existingContacts = [SELECT id, email FROM Contact WHERE Email = :contact.email];
+        if(existingContacts.size() == 0) {
+            insert contact;
+            rental.Customer__c = contact.Id;
+        } else {
+            rental.Customer__c = existingContacts[0].id;
+        }
         Account relatedAccount = [SELECT Id FROM Account where Name = 'Edge Communications'];
-        rental.Customer__c = contact.Id;
         rental.Company__c = relatedAccount.Id;
         upsert rental;
         return rental;  
     }
+
+    
 
     @AuraEnabled
     public static List<Vehicle__c> getCars(){

@@ -13,7 +13,7 @@
                         alternativeText="button icon" 
                         />
                     </span>
-                    <span class="slds-truncate slds-p-horizontal_medium" title="Company Information">Cars Available For Rent</span>
+                    <span class="slds-truncate slds-p-horizontal_medium" title="Company Information">List of Cars</span>
                 </button>
             </h3>
     <br/>
