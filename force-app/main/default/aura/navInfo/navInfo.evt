@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Saves attributes for navigation">
+    <aura:attribute name="account" type="Account" />
+    <aura:attribute name="depot" type="Depot__c" />
+
+</aura:event>

@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component implements="forceCommunity:availableForAllPageTypes">
     <!-- Attributes-->
     <aura:attribute name="car" type="Vehicle__c" default="{'sobjectType': 'Vehicle__c', 'Name': 'Car Name', 'Vehicle_Make__c': 'Car Brand' }"/>
     <!-- / Attributes-->

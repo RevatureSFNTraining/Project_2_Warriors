@@ -1,4 +1,4 @@
-<aura:component controller="LocationController">
+<aura:component controller="LocationController" implements="forceCommunity:availableForAllPageTypes">
     <aura:attribute name="city" type="String" default="Getting city information"/>
     <aura:attribute name="state" type="String" default="state information..."/>
     
@@ -8,7 +8,7 @@
         How are you doing in 
     </P>
     <p style="text-align:center">
-        {!v.city}, {!v.state}😊
+        {!v.city}, {!v.state} 😊
     </p>
    
     
