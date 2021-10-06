@@ -19,7 +19,6 @@
             <lightning:tab label="Rent Car" id="two">
                 <c:CarList/>
                 <c:RentCar/>
-                <c:dealsAndPromos/>
             </lightning:tab>
             <lightning:tab label="Sell a Car" id="three">
                 <c:carSales/>
