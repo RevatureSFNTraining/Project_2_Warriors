@@ -3,7 +3,7 @@
     <aura:attribute name="car" type="Vehicle__c" default="{'sobjectType': 'Vehicle__c', 'Name': 'Car Name', 'Vehicle_Make__c': 'Car Brand' }"/>
     <!-- / Attributes-->
     
-    <lightning:card>
+    <lightning:card class="slds-card_boundary">
         <div class="carName" style="text-align:center">   
             {!v.car.Name}
         </div>

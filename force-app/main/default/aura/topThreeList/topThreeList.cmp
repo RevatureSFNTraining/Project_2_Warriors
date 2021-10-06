@@ -8,11 +8,14 @@
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
     <!-- / Initialization -->
     
-    <lightning:layout class="slds-grid_align-center">
-        <lightning:layoutItem padding="around-small" size="4.5" class="slds-grid_align-center">
-            <div aria-labelledby="itemForm">
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" 
+                              size="12" 
+                              class="slds-grid_align-center">
+            <div aria-labelledby="itemForm" 
+                 style="text-align:center">
                 <fieldset class="slds-box slds-theme_default 
-                                 slds-container_small">
+                                 slds-container_large">
                     <legend id="carList" class="slds-text-heading_small 
                                                 slds-p-vertical_medium">
                         <p style="font-size: 3em;">Top 3 Cars</p>
