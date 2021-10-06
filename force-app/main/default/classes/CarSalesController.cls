@@ -7,14 +7,14 @@ public class CarSalesController {
         return vehicle;  
     }
 
-    @AuraEnabled
+    /*@AuraEnabled
     public static Vehicle__c saveAdditionalCar(Vehicle__c vehicle, Purchase_Transaction__c trans){
         upsert trans;
         upsert vehicle;  
         vehicle.Purchase_Transaction__c = trans.Id;
         upsert vehicle;
         return vehicle;       
-    }
+    }*/
 
     @AuraEnabled
     public static List<Account> getCompanies(){

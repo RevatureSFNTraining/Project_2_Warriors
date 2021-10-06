@@ -154,5 +154,12 @@
         }else{
             sectionDiv.setAttribute('class' , 'slds-section slds-is-close cCarSales');
         }
-    }     
+    },
+    
+    handleApplicationEvent: function(cmp, event) {
+        var Dep = event.getParam("depot");
+        var Acc = event.getParam("account");
+        cmp.set("v.account", Acc);
+        cmp.set("v.depot", Dep);    
+    }
 })
